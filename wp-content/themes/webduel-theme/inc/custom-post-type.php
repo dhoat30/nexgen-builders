@@ -2,126 +2,160 @@
 //custom post register
 
 //custom post register
+add_theme_support("post-thumbnails");
 
-
-add_post_type_support( "sliders", "thumbnail" ); 
-
-add_post_type_support( "loving", "thumbnail" ); 
-add_post_type_support( "blogs", "thumbnail" );
-add_post_type_support( "shop-my-fav", "thumbnail" );
-add_post_type_support( "shop_by_brand", "thumbnail" );
+add_post_type_support( "our-team", "thumbnail" ); 
 
 function register_custom_type2(){ 
 
-   //sliders psot type
-   register_post_type("sliders", array(
-      "supports" => array("title", "page-attributes", 'editor'), 
+   //our team post type
+   register_post_type("our-team", array(
+      "supports" => array("page-attributes"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Sliders", 
-         "add_new_item" => "Add New Slider", 
-         "edit_item" => "Edit Slider", 
-         "all_items" => "All Sliders", 
-         "singular_name" => "Slider"
+         "name" => "Team", 
+         "add_new_item" => "Add New Team Member", 
+         "edit_item" => "Edit Team Member", 
+         "all_items" => "All Team Members", 
+         "singular_name" => "Team Member"
       ), 
-      "menu_icon" => "dashicons-slides",
-      'taxonomies'          => array('category')
+      "menu_icon" => "dashicons-admin-users"
    )
    ); 
 
-   //loving post type
-   register_post_type("loving", array(
-      "supports" => array("title", "page-attributes", 'editor'), 
+   //projects
+   register_post_type("projects", array(
+      "supports" => array("title"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Lovings", 
-         "add_new_item" => "Add New Loving", 
-         "edit_item" => "Edit Loving", 
-         "all_items" => "All Lovings", 
-         "singular_name" => "Loving"
+         "name" => "Projects", 
+         "add_new_item" => "Add New Project", 
+         "edit_item" => "Edit Project", 
+         "all_items" => "All Projects", 
+         "singular_name" => "Project"      
       ), 
-      "menu_icon" => "dashicons-welcome-widgets-menus",
-      'taxonomies'          => array('category')
+      "menu_icon" => "dashicons-hammer"
+   )
+   ); 
+
+   //usp
+   register_post_type("usp", array(
+      "supports" => array("title", "thumbnail", "editor"), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "USP", 
+         "add_new_item" => "Add New USP", 
+         "edit_item" => "Edit USP", 
+         "all_items" => "All USP", 
+         "singular_name" => "USP"     
+      ), 
+      "menu_icon" => "dashicons-editor-ul"
+   )
+   ); 
+
+   //accomplishments
+   register_post_type("accomplishments", array(
+      "supports" => array("title", "editor"), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Accomplishments", 
+         "add_new_item" => "Add New Accomplishment", 
+         "edit_item" => "Edit Accomplishment", 
+         "all_items" => "All Accomplishments", 
+         "singular_name" => "Accomplishment"     
+      ), 
+      "menu_icon" => "dashicons-awards"
    )
    );
 
-   //blogs post type
-   register_post_type("blogs", array(
-      'show_in_rest' => true,
-      "supports" => array("title", "page-attributes", 'editor'), 
+   //accomplishments
+   register_post_type("clients", array(
+      "supports" => array("title", "thumbnail"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Blogs", 
-         "add_new_item" => "Add New Blog", 
-         "edit_item" => "Edit Blog", 
-         "all_items" => "All Blogs", 
-         "singular_name" => "Blog"
+         "name" => "Clients", 
+         "add_new_item" => "Add New Client", 
+         "edit_item" => "Edit Client", 
+         "all_items" => "All Clients", 
+         "singular_name" => "Client"     
       ), 
-      "menu_icon" => "dashicons-welcome-write-blog",
-      'taxonomies'          => array('category')
+      "menu_icon" => "dashicons-networking"
    )
    );
 
-   //loving post type
-   register_post_type("shop-my-fav", array(
-      "supports" => array("title", "page-attributes"), 
+   //Reviews
+   register_post_type("reviews", array(
+      "supports" => array("title", "thumbnail"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Shop My Favs", 
-         "add_new_item" => "Add New Shop My Fav", 
-         "edit_item" => "Edit Shop My Fav", 
-         "all_items" => "All Shop My Favs", 
-         "singular_name" => "Shop My Fav"
+         "name" => "Reviews", 
+         "add_new_item" => "Add New Review", 
+         "edit_item" => "Edit Review", 
+         "all_items" => "All Reviews", 
+         "singular_name" => "Review"     
       ), 
-      "menu_icon" => "dashicons-welcome-write-blog"
+      "menu_icon" => "dashicons-buddicons-buddypress-logo"
    )
    );
    
-   //shop by brand page post type
-   register_post_type("shop_by_brand", array(
-      "supports" => array("title", "page-attributes"), 
+   //Services
+   register_post_type("services", array(
+      "supports" => array("title", "thumbnail", "editor"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Brands", 
-         "add_new_item" => "Add New Brand", 
-         "edit_item" => "Edit Brand", 
-         "all_items" => "All Brands", 
-         "singular_name" => "Brand"
+         "name" => "Services", 
+         "add_new_item" => "Add New Service", 
+         "edit_item" => "Edit Service", 
+         "all_items" => "All Services", 
+         "singular_name" => "Service"     
       ), 
-      "menu_icon" => "dashicons-shield"
+      "menu_icon" => "dashicons-megaphone"
    )
    );
 
-  
+   //Services
+   register_post_type("business-info", array(
+      "supports" => array("title"), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Business Info", 
+         "add_new_item" => "Add New Business Info", 
+         "edit_item" => "Edit Business Info", 
+         "all_items" => "All Business Info", 
+         "singular_name" => "Business Info"     
+      ), 
+      "menu_icon" => "dashicons-format-aside"
+   )
+   );
 }
 
 add_action("init", "register_custom_type2"); 
 
-
-
 //custom taxonomy
 function wpdocs_register_private_taxonomy() {
    $args = array(
-       'label'        => __( 'favorite', 'textdomain' ),
+       'label'        => __( 'Service Category', 'textdomain' ),
        'public'       => true,
        'rewrite'      => true,
        'hierarchical' => true
    );
     
-   register_taxonomy( 'favorite', 'shop-my-fav', $args );
+   register_taxonomy( 'Service Category', 'services', $args );
 }
 add_action( 'init', 'wpdocs_register_private_taxonomy', 0 );
-
-
-
-
