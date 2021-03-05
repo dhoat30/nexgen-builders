@@ -1,0 +1,65 @@
+.hero-section .hero-image-container .hero-image{
+    position: relative;
+    width: 100%;
+    padding-bottom: 400px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    z-index: 0;
+}
+
+.hero-section .hero-image-container .content{
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 900px;
+}
+.hero-image-container p{
+    text-align: center;
+    color: white;
+}
+.hero-image-container p a{
+    color: white;
+    text-decoration: none;
+}
+.hero-image-container p a:hover{
+    color: #1B93B2;
+    text-decoration: underline;
+}
+
+/*about us content*/ 
+
+.about-us-container .flex-cards .card{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-us-container .flex-cards .card>div{
+   width: 45%;
+   margin-bottom: 50px;
+}
+.about-us-container .flex-cards .card img{
+    width: 100%;
+    position: relative;
+    bottom: 20px;
+    right: 20px;
+ }
+.content p {
+    margin-top: 10px;
+}
+.about-us-container .card .background{
+    background-color: #1B93B2;
+    position: relative;
+  
+}
+
+@media (max-width:950px){
+    .about-us-container .flex-cards .card>div{
+        width: 100%;
+     }
+}

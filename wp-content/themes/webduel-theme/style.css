@@ -6,11 +6,172 @@
     version: 1.1
 */
 
+@import 'css/style.css';
+@import 'css/footer.css';
+@import 'css/front-page.css';
+@import 'css/about-us.css';
+@import 'css/contact.css';
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: #3F3F3F;
+    font-family: 'Roboto', serif;
+}
+.row-container{
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.playfair{
     font-family: 'Playfair Display', serif;
+}
+
+/*font-weight----------*/
+.bold{
+    font-weight: 700;
+}
+.ex-bold{
+    font-weight: 800;
+}
+.black{
+    font-weight: 900;
+}
+.medium{
+    font-weight: 500;
+}
+.regular{
+    font-weight: 400;
+}
+.light{
+    font-weight: 300;
+}
+.thin{
+    font-weight: 100;
+}
+
+/*font-size*/ 
+.card-title{
+    font-size: 22px;
+}
+.column-title{
+    font-size: 35px;
+}
+.row-title{
+    font-size: 40px; 
+}
+.paragraph{
+    font-size: 15px;
+    line-height: 1.5em;
+}
+.nav-title{
+    font-size: 16px;
+}
+@media (max-width:860px){
+    .row-title{
+        font-size: 25px; 
+    }
+}
+@media (max-width:480px){
+    .row-title{
+        font-size: 18px; 
+    }
+}
+/*text alignment*/
+.center-align{
+    text-align: center;
+   
+}
+.center-margin{
+    margin: 0 auto; 
+}
+
+/*color*/ 
+.blue{
+    color: #1B93B2; 
+}
+.dk-grey{
+    color:#222222; 
+}
+.grey{
+    color:#606060;
+}
+.white{
+    color: white;
+}
+.light-grey{
+    color: #BEBEBE;
+}
+
+/*background*/ 
+.blue-bc{
+    background: #1B93B2;
+}
+.ligh-grey-bc{
+    background: #F8F8F8;
+}
+.dk-grey-bc{
+    background: #222222; 
+}
+
+/*button*/ 
+.rm-dec{
+    text-decoration: none;
+}
+.button{
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+.button-radius{
+    border-radius: 20px;
+}
+
+/*margins */ 
+.margin-section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.margin-row{ 
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.padding-row{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.margin-element{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.padding-element{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*border*/ 
+.border-top{
+    border-top: 1px solid #F8F8F8;
+    opacity: 0.2;
+}
+
+/*overlay*/ 
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/*box-shadow*/ 
+.box-shadow{
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.2);
+}
+.owl-loaded {
+    display: block !important;
 }

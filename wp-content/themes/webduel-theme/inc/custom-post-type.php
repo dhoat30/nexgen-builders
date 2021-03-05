@@ -143,6 +143,76 @@ function register_custom_type2(){
       "menu_icon" => "dashicons-format-aside"
    )
    );
+
+    //certification 
+    register_post_type("certification", array(
+      "supports" => array("title", 'thumbnail'), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Certifications", 
+         "add_new_item" => "Add New Certification", 
+         "edit_item" => "Edit Certification", 
+         "all_items" => "All Certifications", 
+         "singular_name" => "Certification"     
+      ), 
+      "menu_icon" => "dashicons-welcome-learn-more"
+   )
+   );
+
+   //slider 
+   register_post_type("slider", array(
+      "supports" => array("title", 'thumbnail', 'editor'), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Sliders", 
+         "add_new_item" => "Add New Slider", 
+         "edit_item" => "Edit Slider", 
+         "all_items" => "All Sliders", 
+         "singular_name" => "Slider"     
+      ), 
+      "menu_icon" => "dashicons-format-gallery"
+   )
+   );
+
+   //subtitle 
+   register_post_type("subtitle", array(
+      "supports" => array("title"), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Subtitles", 
+         "add_new_item" => "Add New Subtitle", 
+         "edit_item" => "Edit Subtitle", 
+         "all_items" => "All Subtitles", 
+         "singular_name" => "Subtitle"     
+      ), 
+      "menu_icon" => "dashicons-media-code"
+   )
+   );
+
+   //hero-image 
+   register_post_type("hero-image", array(
+      "supports" => array("title"), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Hero Images", 
+         "add_new_item" => "Add New Hero Image", 
+         "edit_item" => "Edit Hero Image", 
+         "all_items" => "All Hero Images", 
+         "singular_name" => "Hero Image"     
+      ), 
+      "menu_icon" => "dashicons-format-image
+      "
+   )
+   );
+   
 }
 
 add_action("init", "register_custom_type2"); 
@@ -157,5 +227,23 @@ function wpdocs_register_private_taxonomy() {
    );
     
    register_taxonomy( 'Service Category', 'services', $args );
+
+   $args2 = array(
+      'label'        => __( 'Slider Category', 'textdomain' ),
+      'public'       => true,
+      'rewrite'      => true,
+      'hierarchical' => true
+  );
+   
+  register_taxonomy( 'slider-category', 'slider', $args2 );
+
+  $argsProjects = array(
+   'label'        => __( 'Project Category', 'textdomain' ),
+   'public'       => true,
+   'rewrite'      => true,
+   'hierarchical' => true
+);
+
+register_taxonomy( 'project-category', 'projects', $argsProjects );
 }
 add_action( 'init', 'wpdocs_register_private_taxonomy', 0 );

@@ -84,7 +84,6 @@ if (currentTask == "devFast") {
         below this comment to look like this instead. I'm using this approach
         instead of just disabling Hot Module Replacement beacuse this way our
         CSS updates can still happen immediately without a page refresh.
-
         If you're using a slower computer and the new bundle is not ready
         by the time this is reloading the browser you can always just set the 
         "hot" property a few lines below this to false instead of true. That

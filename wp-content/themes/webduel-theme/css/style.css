@@ -1,10 +1,133 @@
-h3{
-    font-size: black; 
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 70px;
 }
+.header .logo-container{
+    width: 200px;
 
-h1{
-    color: red !important;  
 }
-.heading{
-    color: red !important; 
+.logo-container img{
+    position: absolute;
+    top: 18px;
+    width: 100px !important;
 }
+.free-consultation-container{
+    width: 200px;
+}
+.navbar-container {
+    width: 100%;
+    max-width: 700px;
+
+}
+.navbar-container ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navbar-container ul a{
+   color: white;
+   text-decoration: none;
+   font-size: 14px;
+   font-weight: 300;
+   text-transform: uppercase;
+   font-family: 'Roboto', sans-serif;
+   letter-spacing: 1px;
+   position: relative;
+   text-align: center;
+   transition-timing-function: ease-in-out;
+   transition-duration: 500ms;
+   text-align: center !important;
+   
+}
+.navbar-container ul a:hover{
+    color: #1B93B2;
+    cursor: pointer;
+}
+.navbar-container ul a:hover::after{
+    content: "";
+    border: 2px solid #1B93B2;
+    width: 100%;
+    position: absolute;
+   top: 38px;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+ .mobile-header{
+    display: none;
+}
+ @media (max-width: 1350px){
+     .desktop-header{
+         display: none;
+     }
+
+     .mobile-header{
+         display: flex;
+         flex-direction: row-reverse;
+         margin: 0 20px;
+     }
+     .header{
+        height: 50px;
+    }
+    .fa-times{
+        display: none;
+    }
+     .mobile-header .fa-bars, .fa-times{
+         color: #1B93B2;
+         font-size: 40px;
+         position: absolute;
+        top: 7px;
+        left: 10px;
+        width: 60px !important;
+        cursor: pointer;
+     }
+
+     .header .logo-container{
+        width: 50px;
+    }
+    .logo-container img{
+        position: absolute;
+        top: 1px;
+        right: 10px;
+        width: 50px !important;
+    }
+
+      .navbar-container{
+         background: #222222; 
+         position: absolute;
+         width: 100%;
+         max-width: 100%;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         top: 50px;
+         display: none;
+         z-index: 1000;
+     }
+     .mobile-header .navbar-container ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navbar-container ul a{
+        width: 100%;
+        display: block;
+        text-align: left !important;
+        padding: 15px 15px;
+     }
+     .navbar-container ul a:hover{
+        background: #1B93B2;
+        color: white;
+     }
+     .navbar-container ul a:hover::after{
+        content: "";
+        border: none;
+        width: 0;
+        position: absolute;
+     }
+ }
