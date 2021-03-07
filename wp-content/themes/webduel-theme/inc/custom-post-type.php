@@ -114,6 +114,7 @@ function register_custom_type2(){
    register_post_type("services", array(
       "supports" => array("title", "thumbnail", "editor"), 
       "public" => true, 
+      'show_in_rest' => true,
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
@@ -127,11 +128,11 @@ function register_custom_type2(){
    )
    );
 
-   //Services
+   //business info
    register_post_type("business-info", array(
       "supports" => array("title"), 
       "public" => true, 
-      "show_ui" => true, 
+      "show_ui" => true,
       "hierarchical" => true,
       "labels" => array(
          "name" => "Business Info", 
@@ -219,14 +220,7 @@ add_action("init", "register_custom_type2");
 
 //custom taxonomy
 function wpdocs_register_private_taxonomy() {
-   $args = array(
-       'label'        => __( 'Service Category', 'textdomain' ),
-       'public'       => true,
-       'rewrite'      => true,
-       'hierarchical' => true
-   );
-    
-   register_taxonomy( 'Service Category', 'services', $args );
+   
 
    $args2 = array(
       'label'        => __( 'Slider Category', 'textdomain' ),
@@ -244,6 +238,6 @@ function wpdocs_register_private_taxonomy() {
    'hierarchical' => true
 );
 
-register_taxonomy( 'project-category', 'projects', $argsProjects );
+register_taxonomy( 'project-category', array('projects', 'services'), $argsProjects );
 }
 add_action( 'init', 'wpdocs_register_private_taxonomy', 0 );

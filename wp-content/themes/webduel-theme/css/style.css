@@ -14,6 +14,7 @@
     position: absolute;
     top: 18px;
     width: 100px !important;
+    z-index: 100;
 }
 .free-consultation-container{
     width: 200px;
@@ -28,6 +29,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.navbar-container ul li{
+    padding: 5px;
 }
 .navbar-container ul a{
    color: white;
@@ -131,3 +135,34 @@
         position: absolute;
      }
  }
+ /*submenu*/ 
+ .menu-item{
+    position: relative;
+ }
+ .menu-item>.sub-menu{
+     position: absolute;
+     background-color: #222222;
+     z-index: 100;
+     display: none;
+     flex-direction: column;
+     width: 300px;
+ }
+ .menu-item>.sub-menu a{
+    padding: 20px 0!important;
+    display: inline-block;
+    text-align: left !important;
+}
+.menu-item>.sub-menu li{
+    padding: 0 20px;
+}
+.menu-item>.sub-menu a::after{
+    top: 45px !important;
+}
+.menu-item i{
+    color: white;
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+    display: inline;
+}
+

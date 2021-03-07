@@ -9,6 +9,7 @@ class Styling {
 
     events(){
         $('.content p').addClass('paragraph light grey');
+        $('.single-services-section p').addClass('paragraph light grey');
     }
 
     

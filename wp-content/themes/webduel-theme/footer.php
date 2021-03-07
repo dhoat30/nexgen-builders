@@ -81,6 +81,8 @@
                 <input type="text" placeholder="Name" name="name">
                 <input type="email" placeholder="Email here" name="email">
                 <textarea name="message" id="message"  placeholder="Message here"></textarea>
+                <button class="button blue-bc white" type="submit">Submit</button>
+
             </form>
         </div>
         

@@ -101,7 +101,7 @@ get_header();
                             <a href="<?php echo get_the_permalink(); ?>" class="rm-dec">
                                 <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
                                 <h4 class="playfair card-title light dk-grey"> <?php echo get_the_title();?></h4>
-                                <p class="paragraph light grey"><?php echo get_the_content();?></p>
+                                <p class="paragraph light grey"><?php echo wp_trim_words(get_the_content(), 40);?></p>
                                 <a href="<?php echo get_the_permalink(); ?>" class="rm-dec blue light paragraph link"> Read More <i class="fal fa-long-arrow-right"></i></a>
                             </a>
                         </div>

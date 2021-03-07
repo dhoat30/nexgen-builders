@@ -47,51 +47,68 @@ get_header();
     <div class="filter-by-container row-container">
         <h2 class="playfair column-title light center-align">Filter By</h2>
 
-        <div class="filters">
+        <div class="filters row-container margin-element">
             <?php 
             $categories = get_categories(array(
                 'taxonomy' => 'project-category'
             ));
 
             foreach ( $categories as $category ) {
-                printf( '<a href="%1$s">%2$s</a><br />',
-                    esc_url( get_category_link( $category->term_id ) ),
-                    esc_html( $category->name )
-                );
+                ?>
+                <a  class="<?php echo esc_html( $category->name );?>" > <?php echo esc_html( $category->name );?></a>
+                <?php
             }
 
                                       
 
                                         ?>
-        </div>
-        
-        <div class="projects">
-            <?php
+        </div>                                        
+    </div>
+</section>
 
-              $argsFilter = array(
-                                            'post_type' => 'projects'
-                                        );
-                                        $queryFilter = new WP_Query( $argsFilter );
+<!--project cards--> 
+<section class="project-card-section">
+    <div class="project-card-container row-container margin-row">
+        <div class="projects" >
+                <?php
 
-                                        while($queryFilter->have_posts()){ 
-                                            $queryFilter->the_post();
-                                            $postData = get_post_meta( get_the_ID() );		
-						
-                                            $photos_query = $postData['gallery_data'][0];
-                                            $photos_array = unserialize($photos_query);
-                                            $url_array = $photos_array['image_url'];
-                                            ?>
-                                            <div class="content">
-                                                <img src="<?php echo  $url_array[0];?>" alt="<?php echo get_the_title(); ?>">
-                                                <h2><?php echo get_the_title();?></h2>
-                                            </div>
-                                            <?php
-                                            
-                                        }
-                                        wp_reset_postdata();
-            ?>
-        </div>
+                                            $argsFilter = array(
+                                                'post_type' => 'projects'
+                                            );
+                                            $queryFilter = new WP_Query( $argsFilter );
+
+                                            while($queryFilter->have_posts()){ 
+                                                $queryFilter->the_post();
+                                                $postData = get_post_meta( get_the_ID() );		
+                            
+                                                $photos_query = $postData['gallery_data'][0];
+                                                $photos_array = unserialize($photos_query);
+                                                $url_array = $photos_array['image_url'];
+                                                
+                                                
+                                                $category_detail=get_the_terms(get_the_id(), 'project-category');//$post->ID
+                                                
+                                                $terms_string = join(' ', wp_list_pluck($category_detail, 'name'));
+
+                                                ?>
+                                                <a class="content <?php print_r( $terms_string);?>" href="<?php echo get_the_permalink(); ?>">
+                                                    <div>
+                                                        <div class="parent  box-shadow">
+                                                            <div class="child" style='background-image: url("<?php echo  $url_array[0];?>");'>
+                                                            </div>
+                                                        </div>
+                                                        <h2 class="card-title light playfair dk-grey"><?php echo get_the_title();?></h2>
+                                                        <p><?php echo get_field('location'); ?></p>
+                                                        
                                                     
+                                                    </div>
+                                                </a>
+                                                <?php
+                                                
+                                            }
+                                            wp_reset_postdata();
+                ?>
+        </div>
     </div>
 </section>
 

@@ -2,10 +2,14 @@ import "../style.css"
 import Navbar from './modules/Navbar'; 
 import Slider from './modules/Slider';
 import Styling from './modules/Styling'; 
+import Isotope from './modules/Isotope';
+import Animations from './modules/Animations';
 
 const navbar = new Navbar(); 
 const slider = new Slider(); 
 const styling = new Styling();
+const isotope = new Isotope();
+const animations = new Animations();
 
 console.log('it is working');
 

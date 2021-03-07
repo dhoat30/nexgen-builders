@@ -1,0 +1,91 @@
+.filter-by-section a{
+    text-align: center !important;
+    margin: 0 20px 5px 20px;
+    cursor: pointer;
+    color: #222222;
+}
+.filter-by-section a:hover{
+    color: #1B93B2;
+}
+.filter-by-section .filters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+}
+
+.project-card-section .projects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    cursor: pointer;
+}
+.project-card-section .projects a{
+    text-decoration: none !important;
+}
+.project-card-section .projects .content{
+    max-width: 280px;
+    margin: 30px 30px;
+}
+.project-card-section .projects .content .parent{
+    max-width: 280px;
+    height: 300px;
+    object-fit: cover;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+
+}
+.project-card-section .projects .content .child{
+    width: 280px;
+    height: 100%;
+    background-color: black; /* fallback color */
+    background-position: center;
+    background-size: cover;
+    transition: all 500ms ease-in-out;
+
+}
+.parent:hover .child,
+.parent:focus .child {
+  transform: scale(1.2);
+}
+
+
+.project-card-section .projects .content h2{
+    margin-top: 10px;
+}
+
+@media(max-width: 730px){
+    .project-card-section .projects{
+        justify-content: center; 
+    }
+    .project-card-section .projects .content{
+        margin: 30px 10px;
+    }
+    
+}
+@media(max-width: 330px){
+    .project-card-section .projects .content{
+        max-width: 230px;
+        margin: 30px 30px;
+    }
+    .project-card-section .projects .content .parent{
+        max-width: 230px;
+        height: 260px;
+        object-fit: cover;
+        transition: all .2s ease-in-out;
+        overflow: hidden;
+    
+    }
+    .project-card-section .projects .content .child{
+        width: 230px;
+        height: 100%;
+        background-color: black; /* fallback color */
+        background-position: center;
+        background-size: cover;
+        transition: all 500ms ease-in-out;
+    
+    }
+    
+}

@@ -1,34 +1,67 @@
-<?php
+<?php 
+/* Template Name: Places * Template Post Type: post*/ /*The template for displaying full width single posts. */
+get_header(); 
 
+?>
+<!-- hero image section --> 
+<section class="hero-section">
+    <div class="hero-image-container">
+            <?php 
 
-get_header(); ?>
+                                        $args = array(
+                                            'post_type' => 'hero-image'
+                                        );
+                                        $query = new WP_Query( $args );
 
-<div id="primary" class="content-area row-container not-found">
-	<div id="content" class="site-content" role="main">
+                                        while($query->have_posts()){ 
+                                            $query->the_post(); 
+                                            $heroImage = get_field('error_page');
+                                            if( !empty( $heroImage ) ): ?>
+                                                <div class="hero-image" style='background: url("<?php echo esc_url($heroImage['url']); ?>");'> 
+                                            <?php
+                                            endif;       
+                                        }
+                                        wp_reset_postdata();
 
-		<header class="page-header">
-			<h1 class="lg-font-sz center-align regular margin-row"><?php _e( 'Not Found', 'twentythirteen' ); ?></h1>
-		</header>
+                                        ?>
+                                                <div class="overlay"></div>
+                                                <div class="content">
+                                                    <h1 class="white playfair row-title center-align regular">Error Page </h1>
+                                                    
+                                                    <?php
+                                                    //breadcrumbs 
+                                                    if ( function_exists('yoast_breadcrumb') ) {
+                                                    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+                                                    }
+                                                    ?>
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+    </div>                                  
+</section>
 
-		<div class="page-wrapper">
-			<div class="page-content">
-				<h2 class="roboto-font center-align font-s-medium regular">
-					<?php _e( 'This is somewhat embarrassing, isn’t it?', 'twentythirteen' ); ?></h2>
-				<p class="roboto-font center-align font-s-regular regular">
-					<?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentythirteen' ); ?>
-				</p>
+<!-- contact form section--> 
 
-				<?php get_search_form(); ?>
-			</div><!-- .page-content -->
-		</div><!-- .page-wrapper -->
-
-	</div><!-- #content -->
-
-	<div class="fabric-calculator-container">
-		<div>
-
+<section class="error-section margin-section">
+    <div class="error-container row-container">
+        <div class="error-content">
+			<h1 class="black">404</h1>
+			<h2 class="card-title playfair light margin-element">Sorry...This page is not found</h2>
+			<a href="<?php echo get_site_url();?>" class="button blue-bc white rm-dec center-align">Back to home</a>
+		</div> 
+		<div class="error-image">
+			<img src="<?php echo get_site_url();?>/wp-content/uploads/2021/03/404.png" alt="error page image">
 		</div>
-	</div>
-</div><!-- #primary -->
 
-<?php get_footer(); ?>
+                                         
+    </div>
+</section>
+
+
+
+
+<?php 
+
+get_footer(); 
+?>

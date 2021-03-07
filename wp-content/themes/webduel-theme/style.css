@@ -11,6 +11,9 @@
 @import 'css/front-page.css';
 @import 'css/about-us.css';
 @import 'css/contact.css';
+@import 'css/single-project.css';
+@import 'css/project.css'; 
+@import 'css/single-services.css'; 
 
 * {
     box-sizing: border-box;
@@ -67,16 +70,7 @@
 .nav-title{
     font-size: 16px;
 }
-@media (max-width:860px){
-    .row-title{
-        font-size: 25px; 
-    }
-}
-@media (max-width:480px){
-    .row-title{
-        font-size: 18px; 
-    }
-}
+
 /*text alignment*/
 .center-align{
     text-align: center;
@@ -88,7 +82,7 @@
 
 /*color*/ 
 .blue{
-    color: #1B93B2; 
+    color: #1B93B2 !important; 
 }
 .dk-grey{
     color:#222222; 
@@ -174,4 +168,24 @@
 }
 .owl-loaded {
     display: block !important;
+}
+
+/*error page*/ 
+.error-section .error-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.error-section .error-container>div{
+    margin: 20px 20px;
+}
+.error-section h1{
+    font-size: 100px;
+    line-height: 0.6em;
+}
+.error-section a{
+    width: 200px;
+    margin-top: 20px;
 }
