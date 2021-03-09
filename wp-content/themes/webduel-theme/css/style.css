@@ -147,14 +147,22 @@
      flex-direction: column;
      width: 300px;
  }
+ .menu-item>.sub-menu .sub-menu{ 
+    position: absolute;
+    background-color: #222222;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    left: 300px;
+    top: 30px;
+}
  .menu-item>.sub-menu a{
     padding: 20px 0!important;
     display: inline-block;
     text-align: left !important;
 }
-.menu-item>.sub-menu li{
-    padding: 0 20px;
-}
+
 .menu-item>.sub-menu a::after{
     top: 45px !important;
 }

@@ -77,13 +77,18 @@
             <h6 class="white card-title playfair light">
                 Get in touch
             </h6>
-            <form action="processor.php" class="margin-element">
+            <form id="footer-form" action="processor.php" method="post" class="margin-element">
                 <input type="text" placeholder="Name" name="name">
                 <input type="email" placeholder="Email here" name="email">
                 <textarea name="message" id="message"  placeholder="Message here"></textarea>
-                <button class="button blue-bc white" type="submit">Submit</button>
+                <input class="button blue-bc white" type="submit" value="Submit">
 
             </form>
+            <?php 
+            $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+            if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
+            else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+            ?>
         </div>
         
     </div>

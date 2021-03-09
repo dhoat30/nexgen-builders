@@ -11,30 +11,30 @@ class Navbar {
     }
     //check submeny
     checkSubmenu(){
-        $('.sub-menu').parent('.menu-item').append('<i class="fal fa-angle-down"></i>'); 
-        $('.menu-item').hover( (e)=>{
-            $(e.target).children('i').addClass('blue fa-angle-up');
-            $(e.target).children('.sub-menu').show();
-        }, (e)=>{
-            $(e.target).children('i').removeClass('blue fa-angle-up');
-            $(e.target).children('.sub-menu').hide();
-        })
-        $('.menu-item a').hover( (e)=>{
-            $(e.target).siblings('i').addClass('blue fa-angle-up');
-            $(e.target).siblings('.sub-menu').show();
-        }, (e)=>{
-            
-        })
+         $('.sub-menu').parent('.menu-item').append('<i class="fal fa-angle-down"></i>'); 
+        // $('.menu-item').hover( (e)=>{
+        //     $(e.target).children('i').addClass('blue fa-angle-up');
+        //     $(e.target).children('.sub-menu').show();
+        // }, (e)=>{
+        //     $(e.target).children('i').removeClass('blue fa-angle-up');
+        //     $(e.target).children('.sub-menu').hide();
+        // })
        
-        $('.sub-menu').mouseleave((e)=>{
-            $('.sub-menu').hide('slow');
-            let v = $(e.target).closest(".sub-menu").length;
-            console.log(v);
-            if(v===1 ){
-                console.log('doesn exist');
-            }
+       
+        // $('.sub-menu').mouseleave((e)=>{
+        //     $('.sub-menu').hide('slow');
+        //     let v = $(e.target).closest(".sub-menu").length;
+        //     console.log(v);
+        //     if(v===1 ){
+        //         console.log('doesn exist');
+        //     }
          
-        })
+        // })
+
+        $('.menu-item').hover(function(e) {
+            $(this).children('i').toggleClass('blue fa-angle-up');
+            $(this).children('ul').stop(true, false, true).slideToggle(300);
+        });
 
     }
 
