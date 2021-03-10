@@ -78,24 +78,19 @@
                 Get in touch
             </h6>
             <form id="footer-form" action="processor.php" method="post" class="margin-element">
-                <input type="text" placeholder="Name" name="name">
-                <input type="email" placeholder="Email here" name="email">
-                <textarea name="message" id="message"  placeholder="Message here"></textarea>
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="email" placeholder="Email here" name="email" required>
+                <textarea name="message" id="message"  placeholder="Message here" required></textarea>
                 <input class="button blue-bc white" type="submit" value="Submit">
-
-            </form>
-            <?php 
-            $sent = wp_mail($to, $subject, strip_tags($message), $headers);
-            if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
-            else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
-            ?>
+             </form>
+            
         </div>
         
     </div>
     <div class="border-top"> </div>
     <div class="copyright row-container">
         <div>
-            <p class="light-grey paragraph light margin-element">NexGen Builders © 2020. All right reserved</p>
+            <p class="light-grey paragraph light margin-element">NEXGEN Builders © 2020. All right reserved</p>
         </div>
         <div>
             <p class="light-grey paragraph light margin-element">

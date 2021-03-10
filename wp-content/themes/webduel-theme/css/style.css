@@ -64,77 +64,7 @@
  .mobile-header{
     display: none;
 }
- @media (max-width: 1350px){
-     .desktop-header{
-         display: none;
-     }
 
-     .mobile-header{
-         display: flex;
-         flex-direction: row-reverse;
-         margin: 0 20px;
-     }
-     .header{
-        height: 50px;
-    }
-    .fa-times{
-        display: none;
-    }
-     .mobile-header .fa-bars, .fa-times{
-         color: #1B93B2;
-         font-size: 40px;
-         position: absolute;
-        top: 7px;
-        left: 10px;
-        width: 60px !important;
-        cursor: pointer;
-     }
-
-     .header .logo-container{
-        width: 50px;
-    }
-    .logo-container img{
-        position: absolute;
-        top: 1px;
-        right: 10px;
-        width: 50px !important;
-    }
-
-      .navbar-container{
-         background: #222222; 
-         position: absolute;
-         width: 100%;
-         max-width: 100%;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         top: 50px;
-         display: none;
-         z-index: 1000;
-     }
-     .mobile-header .navbar-container ul{
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .navbar-container ul a{
-        width: 100%;
-        display: block;
-        text-align: left !important;
-        padding: 15px 15px;
-     }
-     .navbar-container ul a:hover{
-        background: #1B93B2;
-        color: white;
-     }
-     .navbar-container ul a:hover::after{
-        content: "";
-        border: none;
-        width: 0;
-        position: absolute;
-     }
- }
  /*submenu*/ 
  .menu-item{
     position: relative;
@@ -173,4 +103,89 @@
     top: 2px;
     display: inline;
 }
+@media (max-width: 1350px){
+    .desktop-header{
+        display: none;
+    }
 
+    .mobile-header{
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 0 20px;
+    }
+    .header{
+       height: 50px;
+   }
+   .fa-times{
+       display: none;
+   }
+    .mobile-header .fa-bars, .fa-times{
+        color: #1B93B2;
+        font-size: 40px;
+        position: absolute;
+       top: 7px;
+       left: 10px;
+       width: 60px !important;
+       cursor: pointer;
+    }
+
+    .header .logo-container{
+       width: 50px;
+   }
+   .logo-container img{
+       position: absolute;
+       top: 1px;
+       right: 10px;
+       width: 50px !important;
+   }
+
+     .navbar-container{
+        background: #222222; 
+        position: absolute;
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 50px;
+        display: none;
+        z-index: 1000;
+    }
+    .mobile-header .navbar-container .menu{
+       list-style: none;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+   }
+   .navbar-container ul a{
+       width: auto;
+       display: inline-block;
+       text-align: left !important;
+       padding: 15px 15px;
+    }
+    .navbar-container ul a:hover{
+       color: #1B93B2;
+    }
+    .navbar-container ul a:hover::after{
+       content: "";
+       border: none;
+       width: 0;
+       position: absolute;
+    }
+    .menu-item>.sub-menu{
+        background-color: #323232;
+        left: 10px;
+        width: 300px;
+        padding: 10px;
+    }
+    .menu-item>.sub-menu .sub-menu{ 
+       position: absolute;
+       background-color: #3e3e3e;
+       z-index: 100;
+       display: none;
+       flex-direction: column;
+       width: 300px;
+       left: 0;
+       top: 30px;
+   }
+}

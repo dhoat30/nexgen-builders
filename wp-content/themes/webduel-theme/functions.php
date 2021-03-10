@@ -23,19 +23,20 @@ require get_theme_file_path('/inc/gallery.php');
    wp_enqueue_script("jQuery");
    
    wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js', array( 'jquery' ), '1.0', false);
-   wp_enqueue_script('lightbox', get_theme_file_uri('/lightbox2-master/dist/js/lightbox.js'), array( 'jquery' ), '1.0', false);
-   wp_enqueue_style("lightbox-css", get_theme_file_uri('/lightbox2-master/dist/css/lightbox.min.css'), false);
+   wp_enqueue_script('lightbox', 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js', array( 'jquery' ), '1.0', false);
+   wp_enqueue_style("lightbox-css", 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/src/css/lightgallery.min.css', false);
 
    wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/e0ba298563.js', NULL, '1.0', false);
    wp_enqueue_style("google-fonts", "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap", false);
   
    if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
-      wp_enqueue_script('main', 'http://localhost:3000/bundled.js',  array( 'jquery' ), '1.0', true);
-    } else {
-      wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'),  array( 'jquery' ), '1.0', true);
-      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.c3a61f64860da45fa14e.js'), NULL, '1.0', true);
-      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/undefined'));      
-      //wp_enqueue_style('our-vendor-styles', get_theme_file_uri('/bundled-assets/undefined'));
+      wp_enqueue_script('main', 'http://localhost:3000/bundled.js',  NULL, '1.0', true);
+    } 
+    else {
+      wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.4986f70258041b321038.js'),  array( 'jquery' ), '1.0', true);
+      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.f5571cffeb0d5a5cbc85.js'), NULL, '1.0', true);
+      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.f5571cffeb0d5a5cbc85.css'));      
+      wp_enqueue_style('our-vendor-styles', get_theme_file_uri('/bundled-assets/styles.f5571cffeb0d5a5cbc85.css'));
     }
     wp_localize_script("main", "nexgenData", array(
       "root_url" => get_site_url(),

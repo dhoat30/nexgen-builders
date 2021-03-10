@@ -22,7 +22,7 @@ get_header();
 
                                                 <img class="img-fluid gallery-img" src="<?php echo $url_array[0]; ?>" alt="<?php echo get_the_title();?>"/>
                                             </div>    
-                                            <div class="image-gallery">
+                                            <div class="image-gallery" id="lightgallery">
                                             <?php
                                             for( $i=1; $i<$count; $i++ ){
                                                 

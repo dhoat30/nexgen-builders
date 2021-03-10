@@ -189,3 +189,11 @@
     width: 200px;
     margin-top: 20px;
 }
+
+/*form messages*/ 
+.error-msg{
+    color: red;
+}
+.success-msg{
+    color: green;
+}

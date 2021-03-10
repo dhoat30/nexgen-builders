@@ -122,6 +122,7 @@ if (currentTask == "build" || currentTask == "buildWatch") {
     splitChunks: { chunks: "all" }
   }
   config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" }), new ManifestPlugin({ publicPath: "" }), new RunAfterCompile())
+
 }
 
 module.exports = config

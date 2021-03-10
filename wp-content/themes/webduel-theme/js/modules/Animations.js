@@ -11,38 +11,62 @@ class Animations {
     }
 
     events(){
-        //front page
-        this.ourUSPSection();
-        this.heroSection(); 
-        this.ourServicesSection(); 
-        this.ourTeamSection();
-        this.reviewSection();
+        
+                //front page
+                if(document.querySelector('.usp-container')){
+                    this.ourUSPSection();
 
-        //project single page
-        this.heroProjectSection();
-        this.projectArchive(); 
+                }
+                if(document.querySelector('.hero-section')){
+                    this.heroSection(); 
+                }
+                if(document.querySelector('.services-section')){
+                    this.ourServicesSection(); 
+                }
+
+                if(document.querySelector('.our-reviews-section')){
+                    this.reviewSection();
+
+                }
+
+
+                this.ourTeamSection();
+
+                //project single page
+                if(document.querySelector('.single-project-hero-container')){
+                    this.heroProjectSection();
+                }
+                
+                if(document.querySelector(".loading-screen")){
+                this.projectArchive(); 
+                }
+        
+       
     }
 
     //project archive
     projectArchive(){
-        gsap.from('.project-card-section .content', {
-            scrollTrigger: {
-                trigger: '.project-card-section',
-                start: "top 50%", 
-                end: "100px 50%",
-                markers: true, 
-                toggleActions: "play none none none"
-                
-            }, 
-            scale: 0, 
-            y: 60,
-            yoyo: true, 
-            ease: "power1.inOut",
-            delay:0,
-            stagger: {
-            amount: 0.5
-            }
-                })
+        
+            gsap.from('.project-card-section .content', {
+                scrollTrigger: {
+                    trigger: '.project-card-section',
+                    start: "top 50%", 
+                    end: "100px 50%",
+ 
+                    toggleActions: "play none none none"
+                    
+                }, 
+                scale: 0, 
+                y: 60,
+                yoyo: true, 
+                ease: "power1.inOut",
+                delay:0,
+                stagger: {
+                amount: 0.5
+                }
+                    })
+        
+        
     }
     //project single page
     heroProjectSection(){
@@ -107,8 +131,7 @@ class Animations {
         gsap.from('.hero-section .content h1', {
             scrollTrigger: {
                 trigger: '.hero-section',
-                start: "top center", 
-                markers: true, 
+                start: "top center",  
                 toggleActions: "play none none none"
             },
             x: -500
@@ -116,8 +139,7 @@ class Animations {
         gsap.from('.hero-section .content .button', {
             scrollTrigger: {
                 trigger: '.hero-section',
-                start: "top center", 
-                markers: true, 
+                start: "top center",  
                 toggleActions: "play none none none"
             },
             duration:2
@@ -130,8 +152,7 @@ class Animations {
         gsap.from('.usp-container .card', {
             scrollTrigger: {
                 trigger: '.usp-container',
-                start: "200px 80%", 
-                markers: true, 
+                start: "200px 80%",  
                 toggleActions: "play none none none"
    
             }, 
@@ -142,8 +163,7 @@ class Animations {
         gsap.from('.usp-section .construction-worker', {
             scrollTrigger: {
                 trigger: '.usp-container',
-                start: "200px 80%", 
-                markers: true, 
+                start: "200px 80%",  
                 toggleActions: "play none none none"
    
             }, 
@@ -160,8 +180,7 @@ class Animations {
             scrollTrigger: {
                 trigger: '.services-section',
                 start: "top 80%", 
-                end: "500px 90%",
-                markers: true, 
+                end: "500px 90%", 
                 toggleActions: "play none none none", 
                 scrub: 0.5
                 
@@ -183,8 +202,7 @@ class Animations {
             scrollTrigger: {
                 trigger: '.our-team-section',
                 start: "top 90%", 
-                end: "100px 40%",
-                markers: true, 
+                end: "100px 40%", 
                 toggleActions: "play none none none"
             }, 
             y: 200, 
@@ -198,8 +216,7 @@ class Animations {
             scrollTrigger: {
                 trigger: '.our-reviews-section',
                 start: "top 60%", 
-                end: "100px 40%",
-                markers: true, 
+                end: "100px 40%", 
                 toggleActions: "play none none none"
             }, 
             scale:0.2,
@@ -212,7 +229,7 @@ class Animations {
                     trigger: '.our-reviews-container',
                     start: "top 60%", 
                     end: "100px 40%",
-                    markers: true, 
+ 
                     toggleActions: "play none none none"
                 }, 
                 opacity:0,

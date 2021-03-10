@@ -1,5 +1,5 @@
 const $ = jQuery; 
-import isotope from 'isotope-layout';
+
 
 class Isotope {
     constructor(){

@@ -7,9 +7,6 @@ get_header();
 <section class="hero-section">
     <div class="slider-container owl-carousel owl-hero-slider">
         
-    
-
-
             <?php 
 
                                         $args = array(

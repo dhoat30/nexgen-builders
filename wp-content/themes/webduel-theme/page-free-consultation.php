@@ -51,12 +51,12 @@ get_header();
             $selectOptions = get_field('services_input_field');
             ?>
         <div class="form">
-            <form action="processor.php">
+            <form action="processor.php" id="free-consultation">
                 <div class="input-container">
-                    <input type="text" id="first-name" placeholder="First Name">
-                    <input type="text" id="last-name" placeholder="Last Name">
-                    <input type="email" id="email" placeholder="Email">
-                    <input type="tel" id="phone" placeholder="Phone Number">
+                    <input name="name" type="text" id="first-name" placeholder="First Name">
+                    <input name="lastName" type="text" id="last-name" placeholder="Last Name">
+                    <input name="email" type="email" id="email" placeholder="Email">
+                    <input name="phone" type="tel" id="phone" placeholder="Phone Number">
                 </div>
                 <select name="service" placeholder="Choose Service" id="service">
                     <option value="No Service Selected">Choose Service</option>
@@ -69,7 +69,7 @@ get_header();
                    
                     <?php endif; ?>
                 </select>
-                <textarea id="message" placeholder="Message"></textarea>
+                <textarea name="message" id="message" placeholder="Message"></textarea>
                 <button class="button blue-bc white" type="submit">Submit</button>
             </form>
 

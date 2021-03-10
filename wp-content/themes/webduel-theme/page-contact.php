@@ -47,15 +47,15 @@ get_header();
     <div class="contact-form-container row-container">
         <h2 class="playfair column-title light">Get in touch</h2>
 
-        <div class="form">
-            <form action="processor.php">
+        <div class="form" >
+            <form action="processor.php" id="contact-page-form">
                 <div class="input-container">
-                    <input type="text" id="first-name" placeholder="First Name">
-                    <input type="text" id="last-name" placeholder="Last Name">
-                    <input type="email" id="email" placeholder="Email">
-                    <input type="tel" id="phone" placeholder="Phone Number">
+                    <input type="text" id="first-name" placeholder="First Name" name="name">
+                    <input type="text" id="last-name" placeholder="Last Name" name="lastName">
+                    <input type="email" id="email" placeholder="Email" name="email">
+                    <input type="tel" id="phone" placeholder="Phone Number" name="phone">
                 </div>
-                <textarea id="message" placeholder="Message"></textarea>
+                <textarea id="message" placeholder="Message" name="message"></textarea>
                 <button class="button blue-bc white" type="submit">Submit</button>
             </form>
 

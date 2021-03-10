@@ -5,36 +5,22 @@ class Navbar {
     }
 
     events(){
+        $('.fa-times').hide();
         $('.mobile-header .fa-bars').on('click', this.openNav); 
         $(document).on('click', '.fa-times', this.closeNav); 
         this.checkSubmenu(); 
     }
     //check submeny
     checkSubmenu(){
-         $('.sub-menu').parent('.menu-item').append('<i class="fal fa-angle-down"></i>'); 
-        // $('.menu-item').hover( (e)=>{
-        //     $(e.target).children('i').addClass('blue fa-angle-up');
-        //     $(e.target).children('.sub-menu').show();
-        // }, (e)=>{
-        //     $(e.target).children('i').removeClass('blue fa-angle-up');
-        //     $(e.target).children('.sub-menu').hide();
-        // })
+        var mq = window.matchMedia("(max-width: 1350px)"); 
        
-       
-        // $('.sub-menu').mouseleave((e)=>{
-        //     $('.sub-menu').hide('slow');
-        //     let v = $(e.target).closest(".sub-menu").length;
-        //     console.log(v);
-        //     if(v===1 ){
-        //         console.log('doesn exist');
-        //     }
-         
-        // })
-
-        $('.menu-item').hover(function(e) {
-            $(this).children('i').toggleClass('blue fa-angle-up');
-            $(this).children('ul').stop(true, false, true).slideToggle(300);
-        });
+            $('.sub-menu').parent('.menu-item').append('<i class="fal fa-angle-down"></i>'); 
+            $('.menu-item').hover(function(e) {
+                $(this).children('i').toggleClass('blue fa-angle-up');
+                $(this).children('ul').stop(true, false, true).slideToggle(300);
+            });
+        
+        
 
     }
 

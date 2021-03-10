@@ -1,3 +1,5 @@
+import { data } from "jquery";
+
 const $ = jQuery; 
 class FormData {
     constructor(){ 
@@ -6,34 +8,35 @@ class FormData {
 	}
 
 	events(){ 		
-			this.footerForm.on('submit', this.formProcess.bind(this)); 
-
-        
-        
+			this.footerForm.on('submit', this.footerFormProcessor.bind(this)); 
+			$('#contact-page-form').on('submit', this.contactForm.bind(this)); 
+			$('#free-consultation').on('submit', this.freeConsultation.bind(this)); 
+	}
+	freeConsultation(e){
+		
+		let dataObj = this.getFormData(e, "#free-consultation"); 
+		this.sendRequest(dataObj, 'form-processor', "#free-consultation"); 
+	}
+	contactForm(e){
+		let dataObj = this.getFormData(e, "#contact-page-form"); 
+		this.sendRequest(dataObj, 'form-processor', "#contact-page-form"); 
+	}
+	footerFormProcessor(e){ 
+		let dataObj = this.getFormData(e, "#footer-form"); 
+		this.sendRequest(dataObj, 'form-processor', "#footer-form"); 
 	}
 
-	formProcess(e){ 
-        console.log('form working')
-		e.preventDefault(); 
-		let data = e.target; 
-		let formData = { 
-			name: data[0].value, 
-			email: data[1].value,
-			message: data[2].value,
-			
-		}
-
-        console.log(formData)
-		const jsonData = JSON.stringify(formData); 
-		console.log(jsonData);
+	sendRequest(dataObj, fileName, formID){
+		console.log(dataObj);
+		const jsonData = JSON.stringify(dataObj); 
 		let xhr = new XMLHttpRequest();
         let url = window.location.hostname;
         let filePath; 
         if(url === 'localhost'){
-            filePath = `/nexgen/form-processor`
+            filePath = `/nexgen/${fileName}`
         }
         else{
-            filePath = `${url}/wp-content/themes/webduel-theme/form-processor.php`
+            filePath = `http://test.nexgenbuilders.co.nz/${fileName}`
         }
         console.log(filePath);
 		xhr.open('POST',filePath); 
@@ -41,24 +44,32 @@ class FormData {
 		xhr.setRequestHeader('Content-Type', 'application/json'); 
 
 		xhr.onload = function(){ 
-			console.log(xhr.status);
-			
+			$(`${formID} p`).html('');
 			if(xhr.status == 200){ 
-				console.log('success')
-				console.log(xhr)
-				data[0].value =""; 
-				data[1].value =""; 
-				data[2].value =""; 
+				console.log(xhr);
+				$($(formID).prop('elements')).each(function(i){
+					if(this.value !== 'Submit'){
+						this.value = "";
+					}
+				});
 				
+				$(formID).append('<p class="success-msg paragraph regular">Thanks for contacting us!</p>');
 			}
 			else{ 
-                console.log('error')
+				$(formID).append('<p class="error-msg paragraph regular">Something went wrong. Please try again!</p>');
 			}
 		}
 
 		xhr.send(jsonData);
+	}
 
-
+	getFormData(e, formID){
+		e.preventDefault(); 
+		var dataObj={};
+		$($(formID).prop('elements')).each(function(i){
+			dataObj[$(this).attr('name')] = this.value;
+		});
+		return dataObj; 
 	}
     
 }
