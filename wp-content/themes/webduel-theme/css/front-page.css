@@ -2,11 +2,13 @@
     position: relative;
     width: 100%;
     padding-bottom: 50%;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position: top !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     z-index: 0;
 }
+
+
 .slider-container{
     position: relative;
 }
@@ -139,13 +141,17 @@
 .usp-container .flex-cards .card h4{
     padding: 5px 10px 0 0;
 }
+.usp-container .flex-cards .card img{
+width: 70px;
+height: 70px;
+object-fit: cover;
+}
 .usp-container .flex-cards .card p{
     padding: 5px 10px 0 0;
 }
 
 @media(max-width:1260px){
     .usp-section .construction-worker{
-       
         top: 33%;
         bottom: 0;
         right: 0;

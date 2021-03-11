@@ -28,7 +28,7 @@ get_header();
 
                                             ?>
                                            
-                                            <div class="slider" style='background: url("<?php echo get_the_post_thumbnail_url(); ?>");'> 
+                                            <div class="slider" style='background: url("<?php echo get_the_post_thumbnail_url(get_the_id(), 'large'); ?>");'> 
                                                 <div class="overlay"></div>
                                                 <div class="content">
                                                     <h1 class="white playfair row-title center-align regular"><?php echo get_the_content(); ?> </h1>
@@ -96,7 +96,7 @@ get_header();
                         ?>
                         <div class="card box-shadow">
                             <a href="<?php echo get_the_permalink(); ?>" class="rm-dec">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
                                 <h4 class="playfair card-title light dk-grey"> <?php echo get_the_title();?></h4>
                                 <p class="paragraph light grey"><?php echo wp_trim_words(get_the_content(), 40);?></p>
                                 <a href="<?php echo get_the_permalink(); ?>" class="rm-dec blue light paragraph link"> Read More <i class="fal fa-long-arrow-right"></i></a>
@@ -146,7 +146,7 @@ get_header();
                         $query3->the_post(); 
                         ?>
                         <div class="card">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
                                 <h4 class="playfair card-title light dk-grey"> <?php echo get_the_title();?></h4>
                                 <p class="paragraph light grey"><?php echo get_the_content();?></p>
                         </div>
@@ -157,7 +157,7 @@ get_header();
         </div>
         
     </div>
-    <img class="construction-worker" src="<?php echo get_site_url();?>/wp-content/uploads/2021/03/portrait-smiling-construction-worker-e1614878836872.png" alt="">
+    <img loading="lazy" class="construction-worker" src="<?php echo get_site_url();?>/wp-content/uploads/2021/03/portrait-smiling-construction-worker-e1614878836872.png" alt="">
 </section>
 
 <section class="achievement-section dk-grey-bc">
@@ -221,7 +221,7 @@ get_header();
                             $queryAch->the_post(); 
                             ?>
                             <div class="card">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
                                 <h4 class="playfair card-title light dk-grey"> <?php echo get_field('team_member_name');?></h4>
                                 <h5 class="paragraph light dk-grey"><?php echo get_field('position');?></h5>
                             </div>
@@ -268,7 +268,7 @@ get_header();
                             $queryAch->the_post(); 
                             ?>
                             <div class="card">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium');?>" alt="<?php echo get_the_title();?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
                                 
                             </div>
                             <?php
@@ -297,7 +297,7 @@ get_header();
                             $queryAch->the_post(); 
                             ?>
                             <div class="card">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
                                 <div class="content">
                                     <p class="paragraph light grey"><?php echo get_field('review'); ?></p>
                                     <h4 class="playfair card-title light dk-grey"><?php echo get_field('name'); ?></h4>

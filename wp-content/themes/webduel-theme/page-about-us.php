@@ -47,7 +47,7 @@ get_header();
             <div class="card">
                 <div class="content">
                     
-                             <h2 class="playfair column-title light">Welcome to NexGen Builders</h2>
+                             <h2 class="playfair column-title light">Welcome to NEXGEN Builders</h2>
                         
                             <p class="paragraph light grey"><?php the_content();?></p>
 
@@ -98,7 +98,7 @@ get_header();
                             $queryAch->the_post(); 
                             ?>
                             <div class="card">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large');?>" alt="<?php echo get_the_title();?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
                                 <h4 class="playfair card-title light dk-grey"> <?php echo get_field('team_member_name');?></h4>
                                 <h5 class="paragraph light dk-grey"><?php echo get_field('position');?></h5>
                             </div>

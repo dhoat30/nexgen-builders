@@ -14,7 +14,7 @@
                         $query->the_post(); 
                         $logo = get_field('logo');
                         if( !empty( $logo ) ): ?>
-                            <img src="<?php echo esc_url($logo['url']); ?>" alt="Logo">
+                            <img loading="lazy" src="<?php echo esc_url($logo['url']); ?>" alt="Logo">
                         <?php
                         endif; 
                         ?>
@@ -59,12 +59,12 @@
                         $value = $field['value'];
                         if($value == 'one-column'){
                             ?>
-                            <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large'); ?>" alt="<?php echo get_the_title();?>" data-column="<?php echo $value?>" height="auto">
+                            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large'); ?>" alt="<?php echo get_the_title();?>" data-column="<?php echo $value?>" height="auto">
                             <?php
                         }
                         else{
                             ?>
-                            <img src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'large'); ?>" alt="<?php echo get_the_title();?>" data-column="<?php echo $value?>">
+                            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large'); ?>" alt="<?php echo get_the_title();?>" data-column="<?php echo $value?>">
                             <?php
                         }
                        
