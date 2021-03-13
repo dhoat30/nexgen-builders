@@ -70,7 +70,7 @@ get_header();
                     <?php endif; ?>
                 </select>
                 <textarea name="message" id="message" placeholder="Message"></textarea>
-                <button class="button blue-bc white" type="submit">Submit</button>
+                <button class="button blue-bc white" type="submit"><?php echo get_field('button_text'); ?></button>
             </form>
 
         </div>                                                

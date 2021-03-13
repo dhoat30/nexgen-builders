@@ -63,7 +63,7 @@ get_header();
 <section class="services-section">
     <div class="services-container row-container margin-section">
         <h2 class="playfair regular column-title center-align dk-grey">
-            What We Do? 
+            What We Do
         </h2>
         <h3 class="center-align dk-grey light nav-title">
             <?php
@@ -114,7 +114,7 @@ get_header();
 <section class="usp-section">
     <div class="usp-container row-container margin-section">
         <h2 class="playfair regular column-title center-align dk-grey">
-            Why Choose Us? 
+            Why Choose Us
         </h2>
         <h3 class="center-align dk-grey light nav-title">
             <?php
@@ -280,19 +280,25 @@ get_header();
 </section>
 
 <!--our Reviews--> 
+<?php
+                        $args_ach = array(
+                            'post_type' => 'reviews', 
+                            'posts_per_page' => '-1'
+                        );
+                        $queryAch = new WP_Query( $args_ach );
+                        if($queryAch->found_posts){
+                            
+                        
+    ?>
+
 <section class="our-reviews-section margin-section">
     <div class="our-reviews-container row-container">
         <h2 class="playfair regular column-title center-align dk-grey">
             Reviews 
         </h2>
         <div class="flex-cards margin-row owl-carousel owl-reviews">
-                <?php
-                        $args_ach = array(
-                            'post_type' => 'reviews', 
-                            'posts_per_page' => '-1'
-                        );
-                        $queryAch = new WP_Query( $args_ach );
-
+               
+                        <?php
                         while($queryAch->have_posts()){ 
                             $queryAch->the_post(); 
                             ?>
@@ -307,6 +313,7 @@ get_header();
                             <?php
                         }
                         wp_reset_postdata();
+                    }
                             ?>
         </div>        
     </div>

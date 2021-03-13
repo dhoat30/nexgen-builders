@@ -58,33 +58,74 @@ get_header();
                                                 }
                                             ?>
                                             <div class="main-content">
-                                                <h1 class="column-title playfair light dk-grey">Brief</h1>
-                                                <p class="paragraph dk-grey light"> <?php echo get_field('brief'); ?></p>
+                                                <?php 
+                                                    if(get_field('brief')){
+                                                    ?>
+                                                    <h1 class="column-title playfair light dk-grey">Brief</h1>
+                                                    <p class="paragraph dk-grey light"> <?php echo get_field('brief'); ?></p>
+                                                <?php
+                                                }
+                                                ?>
 
+                                                <?php 
+                                                    if(get_field('build_')){
+                                                    ?>
                                                 <h1 class="column-title playfair light dk-grey">Build</h1>
                                                 <p class="paragraph dk-grey light"><?php echo get_field('build_'); ?></p>
+                                                <?php
+                                                }
+                                                ?>
 
+                                                <?php 
+                                                    if(get_field('outcome_')){
+                                                    ?>
                                                 <h1 class="column-title playfair light dk-grey">Outcome</h1>
                                                 <p class="paragraph dk-grey light"><?php echo get_field('outcome_'); ?></p>
-                                                
+                                                <?php
+                                                }
+                                                ?>
+
                                             </div>
                                             <div class="meta-info">
-                                                <div>
-                                                    <h2 class="card-title playfair light dk-grey">Project Name</h2>
-                                                    <h3 class="paragraph dk-grey light"><?php echo get_the_title(); ?></h3>
-                                                </div>
-                                                <div>
-                                                    <h2 class="card-title playfair light dk-grey">Project Start</h2>
-                                                    <h3 class="paragraph dk-grey light"><?php echo get_field('project_start'); ?></h3>
-                                                </div>
-                                                <div>
-                                                    <h2 class="card-title playfair light dk-grey">Project Completion</h2>
-                                                    <h3 class="paragraph dk-grey light"><?php echo get_field('project_completion_date'); ?></h3>
-                                                </div>
-                                                <div>
-                                                    <h2 class="card-title playfair light dk-grey">Project Location</h2>
-                                                    <h3 class="paragraph dk-grey light"><?php echo get_field('location'); ?></h3>
-                                                </div>
+                                                <?php if(get_the_title()){
+                                                    ?>
+                                                        <div>
+                                                            <h2 class="card-title playfair light dk-grey">Project Name</h2>
+                                                            <h3 class="paragraph dk-grey light"><?php echo get_the_title(); ?></h3>
+                                                        </div>
+                                                <?php
+                                                }
+                                                ?>
+                                                
+                                                <?php if(get_field('project_start')){
+                                                    ?>
+                                                    <div>
+                                                        <h2 class="card-title playfair light dk-grey">Project Start</h2>
+                                                        <h3 class="paragraph dk-grey light"><?php echo get_field('project_start'); ?></h3>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
+
+                                                <?php if(get_field('project_completion_date')){
+                                                    ?>
+                                                    <div>
+                                                        <h2 class="card-title playfair light dk-grey">Project Completion</h2>
+                                                        <h3 class="paragraph dk-grey light"><?php echo get_field('project_completion_date'); ?></h3>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
+
+                                                <?php if(get_field('location')){
+                                                    ?>
+                                                    <div>
+                                                        <h2 class="card-title playfair light dk-grey">Project Location</h2>
+                                                        <h3 class="paragraph dk-grey light"><?php echo get_field('location'); ?></h3>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
                                                
                                             </div>
                                             

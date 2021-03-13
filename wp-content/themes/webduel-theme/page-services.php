@@ -69,7 +69,9 @@ get_header();
             <?php
                     $args3 = array(
                         'post_type' => 'services', 
-                        'posts_per_page' => '-1'
+                        'posts_per_page' => '-1',
+                        'orderby' => 'publish_date',
+                        'order' => 'ASC'
                     );
                     $query3 = new WP_Query( $args3 );
 

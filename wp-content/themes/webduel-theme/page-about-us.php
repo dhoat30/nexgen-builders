@@ -47,7 +47,7 @@ get_header();
             <div class="card">
                 <div class="content">
                     
-                             <h2 class="playfair column-title light">Welcome to NEXGEN Builders</h2>
+                             <h2 class="playfair column-title light"><?php echo get_field('content_title'); ?></h2>
                         
                             <p class="paragraph light grey"><?php the_content();?></p>
 

@@ -59,7 +59,8 @@
     flex-wrap: wrap;
 }
 .contact-form-section form button{
-    width: 150px;
+    width: auto;
     margin: 20px auto;
+    padding: 10px 20px;
 }
 

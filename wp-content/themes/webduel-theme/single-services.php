@@ -54,20 +54,33 @@ get_header();
                                                 
                                             </div>
                                             <div class="meta-info">
-                                                <div>
-                                                    <?php 
-                                                    $field = get_field_object('project_duration');
-                                                    ?>
-                                                    <h2 class="card-title playfair light dk-grey"><?php echo $field['label'];?></h2>
-                                                    <h3 class="paragraph dk-grey light"><?php echo get_field('project_duration'); ?></h3>
-                                                </div>
-                                                <div>
                                                 <?php 
-                                                    $field = get_field_object('estimated_cost');
-                                                    ?>
-                                                    <h2 class="card-title playfair light dk-grey"><?php echo $field['label'];?></h2>
-                                                    <h3 class="paragraph dk-grey light"><?php echo get_field('estimated_cost'); ?></h3>
-                                                </div>
+                                                    if(get_field('project_duration')){
+                                                        ?>
+                                                        <div>
+                                                            <?php 
+                                                            $field = get_field_object('project_duration');
+                                                            ?>
+                                                            <h2 class="card-title playfair light dk-grey"><?php echo $field['label'];?></h2>
+                                                            <h3 class="paragraph dk-grey light"><?php echo get_field('project_duration'); ?></h3>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                ?>
+                                                
+                                                <?php 
+                                                    if(get_field('estimated_cost')){
+                                                        ?>
+                                                    <div>
+                                                    <?php 
+                                                        $field = get_field_object('estimated_cost');
+                                                        ?>
+                                                        <h2 class="card-title playfair light dk-grey"><?php echo $field['label'];?></h2>
+                                                        <h3 class="paragraph dk-grey light"><?php echo get_field('estimated_cost'); ?></h3>
+                                                    </div>
+                                                <?php
+                                                    }
+                                                ?>
                                                 
                                                
                                             </div>

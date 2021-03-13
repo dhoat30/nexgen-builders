@@ -49,13 +49,14 @@ get_header();
 
         <div class="filters row-container margin-element">
             <?php 
+            //get categories 
             $categories = get_categories(array(
                 'taxonomy' => 'project-category'
             ));
 
             foreach ( $categories as $category ) {
                 ?>
-                <a  class="<?php echo esc_html( $category->name );?>" > <?php echo esc_html( $category->name );?></a>
+                <a  class="<?php echo esc_html( $category->slug );?>" > <?php echo esc_html( $category->name );?></a>
                 <?php
             }
 
@@ -88,7 +89,7 @@ get_header();
                                                 
                                                 $category_detail=get_the_terms(get_the_id(), 'project-category');//$post->ID
                                                 
-                                                $terms_string = join(' ', wp_list_pluck($category_detail, 'name'));
+                                                $terms_string = join(' ', wp_list_pluck($category_detail, 'slug'));
 
                                                 ?>
                                                 <a class="content <?php print_r( $terms_string);?>" href="<?php echo get_the_permalink(); ?>">

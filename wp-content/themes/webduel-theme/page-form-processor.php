@@ -9,6 +9,8 @@
 		$email = test_input($object->email);
 		$message = test_input($object->message);
         $phone = test_input($object->phone);
+        $service = test_input($object->service);
+        $formName = "Contact Form"; 
 
         if($name){
             $name = "\n Name: $name";
@@ -20,11 +22,19 @@
             $email = "\n Email: $email"; 
         }
         if($message){
-            $message = " \n Message: $message \n"; 
+            $message = " \n Message: $message"; 
         }
         if($phone){
-            $phone = " \n phone: $phone";
+            $phone = " \n Phone: $phone";
+            $formName = "Contact Form";
         }
+        if($service){
+            $service = " \n Service: $service";
+            $formName = "Free Consultation Form"; 
+        }
+       
+
+        
 
         function test_input($data) {
             $data = trim($data);
@@ -34,12 +44,12 @@
           }
 		$headers = 'From: ' . $email;
 
-        $msg="<h1>NexGen Builder Contact Form </h1> $name $lastName $email $message $phone ";
+        $msg="NexGen Builder $formName \n\n $name $lastName $email $phone $message $service";
 
         echo($msg);
        
         $to='designer@webduel.co.nz';
-        $sub="Contact Form";
+        $sub=$formName;
         mail($to,$sub,$msg, $headers);
 
 ?>
