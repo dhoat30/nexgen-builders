@@ -45,7 +45,7 @@ get_header();
 
 <section class="contact-form-section margin-section">
     <div class="contact-form-container row-container">
-        <h2 class="playfair column-title light">Book a free consultation</h2>
+        <h2 class="playfair column-title light">Book a consultation</h2>
         <?php 
            //get field
             $selectOptions = get_field('services_input_field');

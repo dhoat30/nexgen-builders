@@ -52,7 +52,7 @@
             </nav>
 
             <div class="free-consultation-container">
-                <a href="<?php echo get_site_url();?>/free-consultation" class="blue-bc button center-align center-margin white rm-dec button-radius">Free Consultation</a>
+                <a href="<?php echo get_site_url();?>/free-consultation" class="blue-bc button center-align center-margin white rm-dec button-radius">Book a Consultation</a>
             </div>
         </div>
         <div class="header row-container mobile-header">
