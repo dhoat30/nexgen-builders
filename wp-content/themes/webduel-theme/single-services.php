@@ -42,9 +42,10 @@ get_header();
                                             
                                             $terms = get_the_terms( $post->ID, 'project-category' ); 
                                                 foreach($terms as $term) {
-                                                $categoryName[]= $term->name;
+                                                $categoryName[]= $term->slug;
                                                 
                                                 }
+                                                
                                             ?>
                                             <div class="main-content">
                                                 <h1 class="column-title playfair light dk-grey"><?php echo get_the_title(); ?></h1>
@@ -137,6 +138,7 @@ get_header();
                                                     )
                                                 )
                                             );
+
                                             $queryFilter = new WP_Query( $argsFilter );
 
                                             while($queryFilter->have_posts()){ 

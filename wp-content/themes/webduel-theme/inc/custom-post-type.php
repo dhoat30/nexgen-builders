@@ -226,7 +226,8 @@ function wpdocs_register_private_taxonomy() {
       'label'        => __( 'Slider Category', 'textdomain' ),
       'public'       => true,
       'rewrite'      => true,
-      'hierarchical' => true
+      'hierarchical' => true,
+      'show_in_rest'      => true
   );
    
   register_taxonomy( 'slider-category', 'slider', $args2 );
@@ -235,7 +236,8 @@ function wpdocs_register_private_taxonomy() {
    'label'        => __( 'Project Category', 'textdomain' ),
    'public'       => true,
    'rewrite'      => true,
-   'hierarchical' => true
+   'hierarchical' => true,
+   'show_in_rest'      => true
 );
 
 register_taxonomy( 'project-category', array('projects', 'services'), $argsProjects );
