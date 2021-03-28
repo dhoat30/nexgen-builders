@@ -28,7 +28,7 @@ get_header();
 
                                             ?>
                                            
-                                            <div class="slider" style='background: url("<?php echo get_the_post_thumbnail_url(get_the_id(), 'large'); ?>");'> 
+                                            <div class="slider" style='background: url("<?php echo get_the_post_thumbnail_url(get_the_id()); ?>");'> 
                                                 <div class="overlay"></div>
                                                 <div class="content">
                                                     <h1 class="white playfair row-title center-align regular"><?php echo get_the_content(); ?> </h1>

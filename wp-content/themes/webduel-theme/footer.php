@@ -36,12 +36,16 @@
                     <i class="fas fa-phone-alt"></i>
                     <?php echo get_field('contact_number');?>
                 </a>
-                <?php
+                
+            </div>
+
+           
+
+            <?php
                     }
                     wp_reset_postdata();
 
                 ?>
-            </div>
         </div>
         <div class="certification">
             
@@ -83,7 +87,71 @@
                 <textarea name="message" id="message"  placeholder="Message here" required></textarea>
                 <input class="button blue-bc white" type="submit" value="Submit">
              </form>
+             <?php 
+                    $social = array(
+                        'post_type' => 'business-info'
+                    );
+                    $querySocial = new WP_Query( $social );
+
+                    while($querySocial->have_posts()){ 
+                        
+                        $querySocial->the_post(); 
             
+                       ?>
+            <div class="social-container">
+                <h6 class="white card-title playfair light margin-element">
+                    Follow Us
+                </h6>
+                <div class="social-icons">
+                
+                    <?php 
+                    if(get_field('facebook_')){
+                        ?>
+                        <a href="<?php echo get_field('facebook_');?>" class="rm-dec"><i class="fab fa-facebook-f light-grey"></i></a>
+
+                        <?php
+                    }
+                    ?>
+                    <?php 
+                    if(get_field('linkedin')){
+                        ?>
+                        <a href="<?php echo get_field('linkedin');?>"><i class="fab fa-linkedin-in card-title light-grey"></i></a>
+
+                        <?php
+                    }
+                    ?>
+                    <?php 
+                    if(get_field('instagram_')){
+                        ?>
+                        <a href="<?php echo get_field('instagram_');?>"><i class="fab fa-instagram card-title light-grey"></i></a>
+
+                        <?php
+                    }
+                    ?>
+                    <?php 
+                    if(get_field('youtube')){
+                        ?>
+                        <a href="<?php echo get_field('youtube');?>"><i class="fab fa-youtube card-title light-grey"></i></a>
+
+                        <?php
+                    }
+                    ?>
+                    <?php 
+                    if(get_field('twitter')){
+                        ?>
+                        <a href="<?php echo get_field('twitter');?>"><i class="fab fa-twitter card-title light-grey"></i></a>
+
+                        <?php
+                    }
+                    ?>
+                </div>
+
+            </div>
+
+                       <?php
+                    }
+                    wp_reset_postdata();
+                ?>
         </div>
         
     </div>

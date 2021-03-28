@@ -77,6 +77,25 @@
     width: 100%;
     margin: 10px 0;
 }
+.footer-container .contact-form .social-container h6{
+    margin-top: 20px;
+}
+.footer-container .contact-form .social-container .social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.footer-container .contact-form .social-container .social-icons a{
+    margin: 0 8px 0 0;
+    color: white !important;
+}
+.footer-container .contact-form .social-container .social-icons .fa-facebook-f{
+    font-size: 18px;
+}
+.footer-container .contact-form .social-container .social-icons i:hover{
+    color: #1B93B2;
+}
 /*copyright*/ 
 .copyright {
     display: flex; 
