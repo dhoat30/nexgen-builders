@@ -36,7 +36,7 @@ require get_theme_file_path('/inc/gallery.php');
       wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.4986f70258041b321038.js'),  array( 'jquery' ), '1.0', true);
       wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.87306793d4c6af2584c5.js'), NULL, '1.0', true);
       wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.87306793d4c6af2584c5.css'));      
-      wp_enqueue_style('our-vendor-styles', get_theme_file_uri('/bundled-assets/styles.4986f70258041b321038.css'));
+      wp_enqueue_style('our-vendor-styles', get_theme_file_uri('/bundled-assets/styles.87306793d4c6af2584c5.css'));
     }
     wp_localize_script("main", "nexgenData", array(
       "root_url" => get_site_url(),
