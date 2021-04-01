@@ -82,7 +82,7 @@
     color: white;
   }
   .services-section .flex-cards .card:hover .link{
-    color: white;
+    color: white !important;
   }
   
   
@@ -106,9 +106,8 @@
 }
 .services-section .flex-cards .card .link:hover{
     text-decoration: underline;
-  
+    color: white !important;
 }
-
 
 @media(max-width: 390px){
     .services-section .flex-cards .card{

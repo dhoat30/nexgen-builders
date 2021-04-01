@@ -87,7 +87,14 @@ get_header();
             <?php
                     $args3 = array(
                         'post_type' => 'services', 
-                        'posts_per_page' => '6'
+                        'posts_per_page' => '6',
+                        'tax_query' => array(
+                            array (
+                                'taxonomy' => 'project-category',
+                                'field' => 'slug',
+                                'terms' => 'show-services-on-home-page',
+                            )
+                        )
                     );
                     $query3 = new WP_Query( $args3 );
 
