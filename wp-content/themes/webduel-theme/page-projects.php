@@ -55,9 +55,11 @@ get_header();
             ));
 
             foreach ( $categories as $category ) {
+                if($category->slug != "show-services-on-home-page"){
                 ?>
                 <a  class="<?php echo esc_html( $category->slug );?>" > <?php echo esc_html( $category->name );?></a>
                 <?php
+                }
             }
 
                                       

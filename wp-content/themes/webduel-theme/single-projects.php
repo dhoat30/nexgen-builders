@@ -15,7 +15,7 @@ get_header();
                                             $count = sizeof($url_array);
                                             
                                             ?>
-    <h1 class="row-title playfair light dk-grey margin-element"><?php echo get_the_title(); ?></h1>
+    
         <div class="gallery-container">
         
                                             <div class="single-image">
@@ -58,6 +58,7 @@ get_header();
                                                 }
                                             ?>
                                             <div class="main-content">
+                                            <h1 class="row-title playfair light dk-grey"><?php echo get_the_title(); ?></h1>
                                                 <?php 
                                                     if(get_field('brief')){
                                                     ?>
@@ -142,8 +143,7 @@ get_header();
 </section>
 
 <!--project cards--> 
-<section class="project-card-section single-project-related-section">
-    <div class="project-card-container row-container margin-row">
+
     
         <?php 
         $argsFilter = array(
@@ -162,6 +162,8 @@ get_header();
 
         if($queryFilter->have_posts()){
             ?>
+    <section class="project-card-section single-project-related-section row-container">
+        <div class="project-card-container margin-row">
             <h4 class="row-title playfair light dk-grey">
                 Related Projects
               
