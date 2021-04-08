@@ -99,8 +99,7 @@ get_header();
 </section>
 
 <!--project cards--> 
-<section class="project-card-section single-project-related-section">
-    <div class="project-card-container row-container margin-row">
+
         <?php
         $argsFilter = array(
             'post_type' => 'projects', 
@@ -116,6 +115,8 @@ get_header();
         $queryFilter = new WP_Query( $argsFilter );
         if($queryFilter->have_posts()){
             ?>
+            <section class="project-card-section single-project-related-section row-container">
+    <div class="project-card-container  margin-row">
             <h4 class="row-title playfair light dk-grey">
                 Related Projects
             </h4>

@@ -62,7 +62,7 @@ get_header();
                                                 <?php 
                                                     if(get_field('brief')){
                                                     ?>
-                                                    <h1 class="column-title playfair light dk-grey">Brief</h1>
+                                                    <h1 class="card-title playfair light dk-grey">Brief</h1>
                                                     <p class="paragraph dk-grey light"> <?php echo get_field('brief'); ?></p>
                                                 <?php
                                                 }
@@ -71,7 +71,7 @@ get_header();
                                                 <?php 
                                                     if(get_field('build_')){
                                                     ?>
-                                                <h1 class="column-title playfair light dk-grey">Build</h1>
+                                                <h1 class="card-title playfair light dk-grey">Build</h1>
                                                 <p class="paragraph dk-grey light"><?php echo get_field('build_'); ?></p>
                                                 <?php
                                                 }
@@ -80,7 +80,7 @@ get_header();
                                                 <?php 
                                                     if(get_field('outcome_')){
                                                     ?>
-                                                <h1 class="column-title playfair light dk-grey">Outcome</h1>
+                                                <h1 class="card-title playfair light dk-grey">Outcome</h1>
                                                 <p class="paragraph dk-grey light"><?php echo get_field('outcome_'); ?></p>
                                                 <?php
                                                 }
