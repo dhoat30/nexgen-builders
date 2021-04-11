@@ -193,8 +193,53 @@ get_header();
     </div>
 </section>
 
+<!--our clients--> 
+<section class="our-clients-section padding-row">
+    <div class="our-clients-container row-container">
+    <h2 class="playfair regular column-title center-align dk-grey">
+            Our Partners
+        </h2>
+        <h3 class="center-align dk-grey light nav-title">
+            <?php
+                $argsClients = array(
+                    'post_type' => 'subtitle'
+                );
+                $queryClients = new WP_Query( $argsClients );
+
+                while($queryClients->have_posts()){ 
+                    $queryClients->the_post(); 
+                        echo get_field('our_clients_subtitle');
+                    ?>
+                        
+                    <?php
+                }
+                wp_reset_postdata();
+                    ?>
+        </h3>
+        <div class="flex-cards margin-row">
+                <?php
+                        $args_ach = array(
+                            'post_type' => 'clients', 
+                            'posts_per_page' => '-1'
+                        );
+                        $queryAch = new WP_Query( $args_ach );
+
+                        while($queryAch->have_posts()){ 
+                            $queryAch->the_post(); 
+                            ?>
+                            <div class="card">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
+                                
+                            </div>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                            ?>
+        </div>        
+    </div>
+</section>
 <!--our team--> 
-<section class="our-team-section">
+<section class="our-team-section ligh-grey-bc padding-element">
     <div class="our-team-container row-container margin-section">
     <h2 class="playfair regular column-title center-align dk-grey">
             Our Team
@@ -240,51 +285,7 @@ get_header();
     </div>
 </section>
 
-<!--our clients--> 
-<section class="our-clients-section ligh-grey-bc">
-    <div class="our-clients-container row-container">
-    <h2 class="playfair regular column-title center-align dk-grey">
-            Our Clients
-        </h2>
-        <h3 class="center-align dk-grey light nav-title">
-            <?php
-                $argsClients = array(
-                    'post_type' => 'subtitle'
-                );
-                $queryClients = new WP_Query( $argsClients );
 
-                while($queryClients->have_posts()){ 
-                    $queryClients->the_post(); 
-                        echo get_field('our_clients_subtitle');
-                    ?>
-                        
-                    <?php
-                }
-                wp_reset_postdata();
-                    ?>
-        </h3>
-        <div class="flex-cards margin-row">
-                <?php
-                        $args_ach = array(
-                            'post_type' => 'clients', 
-                            'posts_per_page' => '-1'
-                        );
-                        $queryAch = new WP_Query( $args_ach );
-
-                        while($queryAch->have_posts()){ 
-                            $queryAch->the_post(); 
-                            ?>
-                            <div class="card">
-                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
-                                
-                            </div>
-                            <?php
-                        }
-                        wp_reset_postdata();
-                            ?>
-        </div>        
-    </div>
-</section>
 
 <!--our Reviews--> 
 <?php

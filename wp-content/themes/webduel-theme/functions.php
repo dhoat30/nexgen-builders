@@ -13,12 +13,7 @@ require get_theme_file_path('/inc/custom-post-type.php');
 require get_theme_file_path('/inc/nav-registeration.php');
 require get_theme_file_path('/inc/gallery.php');
 
-
-
-
-
  //enqueue scripts
-
  function nexgen_scripts(){ 
    wp_enqueue_script("jQuery");
    
@@ -34,9 +29,9 @@ require get_theme_file_path('/inc/gallery.php');
     } 
     else {
       wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.4986f70258041b321038.js'),  array( 'jquery' ), '1.0', true);
-      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.f5ae5b251960516de313.js'), NULL, '1.0', true);
-      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.f5ae5b251960516de313.css'));      
-      wp_enqueue_style('our-vendor-styles', get_theme_file_uri('/bundled-assets/styles.4986f70258041b321038.css'));
+      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.d395b3386071a58bc6dc.js'), NULL, '1.0', true);
+      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.d395b3386071a58bc6dc.css'));      
+      wp_enqueue_style('our-vendor-styles', get_theme_file_uri('/bundled-assets/styles.d395b3386071a58bc6dc.css'));
     }
     wp_localize_script("main", "nexgenData", array(
       "root_url" => get_site_url(),
