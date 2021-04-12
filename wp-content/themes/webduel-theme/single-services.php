@@ -11,7 +11,7 @@ get_header();
                                         while(have_posts()){ 
                                             the_post(); 
                                             ?>
-                                                <div class="hero-image" style='background: url("<?php echo  get_the_post_thumbnail_url(get_the_id(), 'large');?>");'> 
+                                                <div class="hero-image" style='background: url("<?php echo  get_the_post_thumbnail_url(get_the_id(), 'full');?>");'> 
                                             <?php
                                                  
                                         }
