@@ -54,6 +54,11 @@ get_header();
                                                 
                                                 
                                             </div>
+                                            <?php 
+                                            if(get_field('project_duration') || get_field('estimated_cost')){ //box shadow condition
+
+                                    
+                                            ?>
                                             <div class="meta-info">
                                                 <?php 
                                                     if(get_field('project_duration')){
@@ -85,6 +90,9 @@ get_header();
                                                 
                                                
                                             </div>
+                                            <?php
+                                                }
+                                            ?>
                                             
                                         <?php endwhile; ?>
         </div>
