@@ -122,7 +122,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 50px;
-    max-width: 1000px;
+    /* max-width: 1000px; */
 }
 .usp-container .flex-cards .card{
     width: 300px;

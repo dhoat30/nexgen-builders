@@ -164,7 +164,9 @@ get_header();
         </div>
         
     </div>
-    <img loading="lazy" class="construction-worker" src="<?php echo get_site_url();?>/wp-content/uploads/2021/03/portrait-smiling-construction-worker-e1614878836872.png" alt="">
+    <!--  
+    <img loading="lazy" class="construction-worker" src="<?php // echo get_site_url();?>/wp-content/uploads/2021/03/portrait-smiling-construction-worker-e1614878836872.png" alt="">
+    -->
 </section>
 
 <section class="achievement-section dk-grey-bc">
@@ -291,7 +293,9 @@ get_header();
 <?php
                         $args_ach = array(
                             'post_type' => 'reviews', 
-                            'posts_per_page' => '-1'
+                            'posts_per_page' => '-1',
+                            'orderby' => 'title',
+                            'order' => 'ASC'
                         );
                         $queryAch = new WP_Query( $args_ach );
                         if($queryAch->found_posts){
