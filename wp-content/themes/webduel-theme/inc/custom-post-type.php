@@ -10,7 +10,7 @@ function register_custom_type2(){
 
    //our team post type
    register_post_type("our-team", array(
-      "supports" => array("page-attributes"), 
+      "supports" => array("title","page-attributes"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,

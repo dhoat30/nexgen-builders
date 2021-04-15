@@ -90,7 +90,9 @@ get_header();
                 <?php
                         $args_ach = array(
                             'post_type' => 'our-team', 
-                            'posts_per_page' => '-1'
+                            'posts_per_page' => '-1',
+                            'orderby' => 'title',
+                            'order' => 'ASC'
                         );
                         $queryAch = new WP_Query( $args_ach );
 
