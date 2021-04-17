@@ -123,6 +123,7 @@
     justify-content: center;
     margin-top: 50px;
     /* max-width: 1000px; */
+
 }
 .usp-container .flex-cards .card{
     width: 300px;
@@ -190,12 +191,18 @@ object-fit: cover;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;  
+    align-items: center;
 }
 .achievement-container .flex-cards .card{
-    width: 150px;
+    width: 200px;
+    height: 100px;
     margin: 10px;
     border: 1px solid white;
     padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .achievement-container .flex-cards .card h4{

@@ -50,10 +50,10 @@ get_header();
         <div class="form" >
             <form action="processor.php" id="contact-page-form">
                 <div class="input-container">
-                    <input type="text" id="first-name" placeholder="First Name" name="name">
-                    <input type="text" id="last-name" placeholder="Last Name" name="lastName">
-                    <input type="email" id="email" placeholder="Email" name="email">
-                    <input type="tel" id="phone" placeholder="Phone Number" name="phone">
+                    <input type="text" id="first-name" placeholder="First Name" name="name" required>
+                    <input type="text" id="last-name" placeholder="Last Name" name="lastName" required>
+                    <input type="email" id="email" placeholder="Email" name="email" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" name="phone" required>
                 </div>
                 <textarea id="message" placeholder="Message" name="message"></textarea>
                 <button class="button blue-bc white" type="submit">Submit</button>

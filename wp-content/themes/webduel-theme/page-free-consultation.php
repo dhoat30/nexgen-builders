@@ -53,12 +53,12 @@ get_header();
         <div class="form">
             <form action="processor.php" id="free-consultation">
                 <div class="input-container">
-                    <input name="name" type="text" id="first-name" placeholder="First Name">
-                    <input name="lastName" type="text" id="last-name" placeholder="Last Name">
-                    <input name="email" type="email" id="email" placeholder="Email">
-                    <input name="phone" type="tel" id="phone" placeholder="Phone Number">
+                    <input name="name" type="text" id="first-name" placeholder="First Name" required>
+                    <input name="lastName" type="text" id="last-name" placeholder="Last Name" required>
+                    <input name="email" type="email" id="email" placeholder="Email" required>
+                    <input name="phone" type="tel" id="phone" placeholder="Phone Number" required>
                 </div>
-                <select name="service" placeholder="Choose Service" id="service">
+                <select name="service" placeholder="Choose Service" id="service" required>
                     <option value="No Service Selected">Choose Service</option>
                     <?php 
                     if( $selectOptions ): ?>
@@ -69,7 +69,7 @@ get_header();
                    
                     <?php endif; ?>
                 </select>
-                <textarea name="message" id="message" placeholder="Message"></textarea>
+                <textarea name="message" id="message" placeholder="Message" required></textarea>
                 <button class="button blue-bc white" type="submit"><?php echo get_field('button_text'); ?></button>
             </form>
 

@@ -13,7 +13,7 @@ get_header();
                                             $photos_array = unserialize($photos_query);
                                             $url_array = $photos_array['image_url'];
                                             $count = sizeof($url_array);
-                                            
+
                                             ?>
     
         <div class="gallery-container">
@@ -25,10 +25,13 @@ get_header();
                                             <div class="image-gallery" id="lightgallery">
                                             <?php
                                             for( $i=1; $i<$count; $i++ ){
-                                                
+                                                $mediumImage = rtrim($url_array[$i], '.jpg'); 
+                                                if(!$mediumImage){
+                                                    $mediumImage = $url_array[$i]; 
+                                                }
                                             ?>
                                                 <a class="gallery-link" href="<?php echo $url_array[$i]; ?>" data-lightbox="gallery">
-                                                    <img class="gallery-image" src="<?php echo $url_array[$i]; ?>" alt="image-1">
+                                                    <img class="gallery-image" src="<?php echo $mediumImage;?>-768x768.jpg" alt="<?php echo get_the_title();?>">
                                                 </a>
                                                     
                                             

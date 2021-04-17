@@ -29,10 +29,10 @@
 
 }
 .single-project-hero-section .gallery-container .image-gallery img{
-    width: 150px;
+    width: 135px;
     height: 100px;
     object-fit: cover;
-    margin: 0 10px 10px 0;
+    margin: 0 0 10px 10PX;
     display: inline-block;
 }
 
@@ -115,16 +115,6 @@
 }
 .single-projects .main-content p{
     position: relative;
-}
-.single-projects .main-content p::after{
-    content: " ";
-    border: 1px solid #222222;
-    opacity: 0.1;
-    position: absolute;
-    width: 100%;
-    top: 110%;
-    left: 0;
-   
 }
 
 @media(max-width: 800px){

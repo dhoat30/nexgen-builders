@@ -36,7 +36,7 @@ class FormData {
             filePath = `/nexgen/${fileName}`
         }
         else{
-            filePath = `http://test.nexgenbuilders.co.nz/${fileName}`
+            filePath = `https://nexgenbuilders.co.nz/${fileName}`
         }
         console.log(filePath);
 		xhr.open('POST',filePath); 
