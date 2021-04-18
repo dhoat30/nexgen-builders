@@ -25,14 +25,14 @@
                 
             </div>
             <div class="email margin-element">
-                <a href="mailto:<?php echo get_field('email');?>" class="rm-dec light-grey light">
+                <a href="mailto:<?php echo get_field('email');?>" class="rm-dec light-grey light footer-contact">
                      <i class="fas fa-envelope"></i>
                      <?php echo get_field('email');?>
                 </a>
             </div>
 
             <div class="phone">
-                <a href="tel:<?php echo get_field('contact_number');?>" class="rm-dec light-grey light">
+                <a href="tel:<?php echo get_field('contact_number');?>" class="rm-dec light-grey light footer-contact">
                     <i class="fas fa-phone-alt"></i>
                     <?php echo get_field('contact_number');?>
                 </a>
@@ -85,7 +85,7 @@
                 <input type="text" placeholder="Name" name="name" required>
                 <input type="email" placeholder="Email here" name="email" required>
                 <textarea name="message" id="message"  placeholder="Message here" required></textarea>
-                <input class="button blue-bc white" type="submit" value="Submit">
+                <input class="button blue-bc white footer-form-submit" type="submit" value="Submit">
              </form>
              <?php 
                     $social = array(
@@ -107,7 +107,7 @@
                     <?php 
                     if(get_field('facebook_')){
                         ?>
-                        <a href="<?php echo get_field('facebook_');?>" class="rm-dec"><i class="fab fa-facebook-f light-grey"></i></a>
+                        <a href="<?php echo get_field('facebook_');?>" class="rm-dec footer-social-media"><i class="fab fa-facebook-f light-grey"></i></a>
 
                         <?php
                     }
@@ -115,7 +115,7 @@
                     <?php 
                     if(get_field('linkedin')){
                         ?>
-                        <a href="<?php echo get_field('linkedin');?>"><i class="fab fa-linkedin-in card-title light-grey"></i></a>
+                        <a href="<?php echo get_field('linkedin');?>" class='footer-social-media'><i class="fab fa-linkedin-in card-title light-grey"></i></a>
 
                         <?php
                     }
@@ -123,7 +123,7 @@
                     <?php 
                     if(get_field('instagram_')){
                         ?>
-                        <a href="<?php echo get_field('instagram_');?>"><i class="fab fa-instagram card-title light-grey"></i></a>
+                        <a href="<?php echo get_field('instagram_');?>" class='footer-social-media'><i class="fab fa-instagram card-title light-grey"></i></a>
 
                         <?php
                     }
@@ -131,7 +131,7 @@
                     <?php 
                     if(get_field('youtube')){
                         ?>
-                        <a href="<?php echo get_field('youtube');?>"><i class="fab fa-youtube card-title light-grey"></i></a>
+                        <a href="<?php echo get_field('youtube');?>" class='footer-social-media'><i class="fab fa-youtube card-title light-grey"></i></a>
 
                         <?php
                     }
@@ -139,7 +139,7 @@
                     <?php 
                     if(get_field('twitter')){
                         ?>
-                        <a href="<?php echo get_field('twitter');?>"><i class="fab fa-twitter card-title light-grey"></i></a>
+                        <a href="<?php echo get_field('twitter');?>" class='footer-social-media'><i class="fab fa-twitter card-title light-grey"></i></a>
 
                         <?php
                     }

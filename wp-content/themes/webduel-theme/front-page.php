@@ -35,7 +35,7 @@ get_header();
                                                     <?php 
                                                         if(get_field('link')){
                                                             ?>
-                                                             <a class="rm-dec button blue-bc white center-align" 
+                                                             <a class="rm-dec button blue-bc white center-align hero-button" 
                                                              href="<?php echo get_field('link') ?>"><?php echo get_field('link_title');?></a>
                                                             <?php
                                                         }
@@ -102,11 +102,11 @@ get_header();
                         $query3->the_post(); 
                         ?>
                         <div class="card box-shadow">
-                            <a href="<?php echo get_the_permalink(); ?>" class="rm-dec">
+                            <a href="<?php echo get_the_permalink(); ?>" class="rm-dec home-page-services-card" >
                                 <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_id(), 'medium_large');?>" alt="<?php echo get_the_title();?>">
                                 <h4 class="playfair card-title light dk-grey"> <?php echo get_the_title();?></h4>
                                 <p class="paragraph light grey"><?php echo wp_trim_words(get_the_content(), 40);?></p>
-                                <a href="<?php echo get_the_permalink(); ?>" class="rm-dec blue light paragraph link"> Read More <i class="fal fa-long-arrow-right"></i></a>
+                                <a href="<?php echo get_the_permalink(); ?>" class="rm-dec blue light paragraph link home-page-services-card"> Read More <i class="fal fa-long-arrow-right"></i></a>
                             </a>
                         </div>
                         <?php

@@ -13,7 +13,6 @@ get_header();
                                             $photos_array = unserialize($photos_query);
                                             $url_array = $photos_array['image_url'];
                                             $count = sizeof($url_array);
-
                                             ?>
     
         <div class="gallery-container">
@@ -25,13 +24,10 @@ get_header();
                                             <div class="image-gallery" id="lightgallery">
                                             <?php
                                             for( $i=1; $i<$count; $i++ ){
-                                                $mediumImage = rtrim($url_array[$i], '.jpg'); 
-                                                if(!$mediumImage){
-                                                    $mediumImage = $url_array[$i]; 
-                                                }
+                                                
                                             ?>
                                                 <a class="gallery-link" href="<?php echo $url_array[$i]; ?>" data-lightbox="gallery">
-                                                    <img class="gallery-image" src="<?php echo $mediumImage;?>-768x768.jpg" alt="<?php echo get_the_title();?>">
+                                                    <img class="gallery-image" src="<?php echo $url_array[$i]; ?>" alt="<?php echo get_the_title();?>">
                                                 </a>
                                                     
                                             
@@ -74,7 +70,7 @@ get_header();
                                                 <?php 
                                                     if(get_field('build_')){
                                                     ?>
-                                                <h1 class="card-title playfair light dk-grey">Build</h1>
+                                                <h2 class="card-title playfair light dk-grey">Build</h2>
                                                 <p class="paragraph dk-grey light"><?php echo get_field('build_'); ?></p>
                                                 <?php
                                                 }
@@ -83,7 +79,7 @@ get_header();
                                                 <?php 
                                                     if(get_field('outcome_')){
                                                     ?>
-                                                <h1 class="card-title playfair light dk-grey">Outcome</h1>
+                                                <h2 class="card-title playfair light dk-grey">Outcome</h2>
                                                 <p class="paragraph dk-grey light"><?php echo get_field('outcome_'); ?></p>
                                                 <?php
                                                 }
@@ -208,7 +204,7 @@ get_header();
                                                         
                                                     ?>
                                                 
-                                                <a href="<?php echo get_the_permalink(); ?>">
+                                                <a href="<?php echo get_the_permalink(); ?>" class="related-project-single-project">
                                                     <div class="content <?php print_r( $terms_string);?>">
                                                         <div class="parent  box-shadow">
                                                             <div class="child" style='background-image: url("<?php echo  $url_array[0];?>");'>

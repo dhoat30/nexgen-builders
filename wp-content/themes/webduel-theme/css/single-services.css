@@ -10,3 +10,21 @@
    width: 100%;
    
 }
+
+.single-services .main-content h2{
+    color: #222222;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+}
+
+.single-services ul{
+    margin-left: 20px;
+}
+.single-services li{
+    font-size: 15px;
+    line-height: 1.5em;
+    color: #606060;
+    font-weight: 300;
+}

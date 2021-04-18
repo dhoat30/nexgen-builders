@@ -165,7 +165,7 @@ get_header();
                                                     
                                                 ?>
                                                 
-                                                <a href="<?php echo get_the_permalink(); ?>">
+                                                <a href="<?php echo get_the_permalink(); ?>" class='service-page-project-card'>
                                                     <div class="content <?php print_r( $terms_string);?>">
                                                         <div class="parent  box-shadow">
                                                             <div class="child" style='background-image: url("<?php echo  $url_array[0];?>");'>

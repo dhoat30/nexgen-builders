@@ -141,3 +141,13 @@
     }
     
 }
+
+.single-project ul{
+    margin-left: 20px;
+}
+.single-project li{
+    font-size: 15px;
+    line-height: 1.5em;
+    color: #606060;
+    font-weight: 300;
+}

@@ -63,3 +63,20 @@
         width: 100%;
      }
 }
+.about-us-container  h2{
+    color: #222222;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+}
+
+.about-us-container ul{
+    margin-left: 20px;
+}
+.about-us-container li{
+    font-size: 15px;
+    line-height: 1.5em;
+    color: #606060;
+    font-weight: 300;
+}

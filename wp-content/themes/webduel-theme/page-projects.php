@@ -57,7 +57,7 @@ get_header();
             foreach ( $categories as $category ) {
                 if($category->slug != "show-services-on-home-page"){
                 ?>
-                <a  class="<?php echo esc_html( $category->slug );?>" > <?php echo esc_html( $category->name );?></a>
+                <a  class="<?php echo esc_html( $category->slug );?>" id="project-filters"> <?php echo esc_html( $category->name );?></a>
                 <?php
                 }
             }
@@ -94,7 +94,7 @@ get_header();
                                                 $terms_string = join(' ', wp_list_pluck($category_detail, 'slug'));
 
                                                 ?>
-                                                <a class="content <?php print_r( $terms_string);?>" href="<?php echo get_the_permalink(); ?>">
+                                                <a class="content <?php print_r( $terms_string);?> project-page-project-card" href="<?php echo get_the_permalink(); ?>">
                                                     <div>
                                                         <div class="parent  box-shadow">
                                                             <div class="child" style='background-image: url("<?php echo  $url_array[0];?>");'>
