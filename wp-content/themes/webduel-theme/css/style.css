@@ -12,7 +12,7 @@
 }
 .logo-container img{
     position: absolute;
-    top: 18px;
+    top: 6px;
     width: 100px !important;
     z-index: 100;
 }
@@ -136,8 +136,9 @@
        position: absolute;
        top: 1px;
        right: 10px;
-       width: 50px !important;
+       width: 40px !important;
    }
+  
 
      .navbar-container{
         background: #222222; 
