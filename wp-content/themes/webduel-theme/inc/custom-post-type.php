@@ -7,6 +7,22 @@ add_theme_support("post-thumbnails");
 add_post_type_support( "our-team", "thumbnail" ); 
 
 function register_custom_type2(){ 
+   // slogans
+   register_post_type("slogans", array(
+      "supports" => array("title"), 
+      "public" => true, 
+      "show_ui" => true, 
+      "hierarchical" => true,
+      "labels" => array(
+         "name" => "Slogan", 
+         "add_new_item" => "Add New Slogan", 
+         "edit_item" => "Edit Slogan", 
+         "all_items" => "All Slogans", 
+         "singular_name" => "Slogan"
+      ), 
+      "menu_icon" => "dashicons-edit"
+   )
+   ); 
 
    //our team post type
    register_post_type("our-team", array(

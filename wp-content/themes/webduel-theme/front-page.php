@@ -62,26 +62,26 @@ get_header();
 <!-- What we do section? --> 
 <section class="services-section">
     <div class="services-container row-container margin-section">
-        <h2 class="playfair regular column-title center-align dk-grey">
+        <!-- <h2 class="playfair regular column-title center-align dk-grey">
             What We Do
         </h2>
         <h3 class="center-align dk-grey light nav-title">
             <?php
-                $args2 = array(
-                    'post_type' => 'subtitle'
-                );
-                $query2 = new WP_Query( $args2 );
+                // $args2 = array(
+                //     'post_type' => 'subtitle'
+                // );
+                // $query2 = new WP_Query( $args2 );
 
-                while($query2->have_posts()){ 
-                    $query2->the_post(); 
-                        echo get_field('our_services_subtitle');
-                    ?>
+                // while($query2->have_posts()){ 
+                //     $query2->the_post(); 
+                //         echo get_field('our_services_subtitle');
+                //     ?>
                         
-                    <?php
-                }
-                wp_reset_postdata();
+                //     <?php
+                // }
+                // wp_reset_postdata();
                     ?>
-        </h3>
+        </h3> -->
 
         <div class="flex-cards">
             <?php
@@ -169,13 +169,42 @@ get_header();
     -->
 </section>
 
+
+<!-- achievement section 
 <section class="achievement-section dk-grey-bc">
     <div class="achievement-container row-container padding-row">
         <div class="flex-cards">
                 <?php
+                        // $args3 = array(
+                        //     'post_type' => 'accomplishments', 
+                        //     'posts_per_page' => '6'
+                        // );
+                        // $query3 = new WP_Query( $args3 );
+
+                        // while($query3->have_posts()){ 
+                        //     $query3->the_post(); 
+                            ?>
+                            <div class="card">
+                                
+                                <h4 class="card-title bold white center-align"> <?php //echo get_the_title();?></h4>
+                                <h5 class="playfair paragraph light white center-align"><?php //echo get_the_content();?></h5>
+                            </div>
+                            <?php
+                        // }
+                        // wp_reset_postdata();
+                            ?>
+        </div>        
+    </div>
+</section> -->
+
+<!-- slogan section  -->
+<section class="slogan-section dk-grey-bc">
+    <div class="slogan-container row-container padding-row">
+        <div class="flex-cards">
+                <?php
                         $args3 = array(
-                            'post_type' => 'accomplishments', 
-                            'posts_per_page' => '6'
+                            'post_type' => 'slogans', 
+                            'posts_per_page' => '1'
                         );
                         $query3 = new WP_Query( $args3 );
 
@@ -184,8 +213,7 @@ get_header();
                             ?>
                             <div class="card">
                                 
-                                <h4 class="card-title bold white center-align"> <?php echo get_the_title();?></h4>
-                                <h5 class="playfair paragraph light white center-align"><?php echo get_the_content();?></h5>
+                                <h4 class=" white center-align thin row-title"> <?php echo get_the_title();?></h4>
                             </div>
                             <?php
                         }

@@ -19,7 +19,9 @@
             $lastName = " \n Last Name: $lastName";
         }
         if($email){
+            $headers = 'From: ' . $email;
             $email = "\n Email: $email"; 
+            
         }
         if($message){
             $message = " \n Message: $message"; 
@@ -42,13 +44,13 @@
             $data = htmlspecialchars($data);
             return $data;
           }
-		$headers = 'From: ' . $email;
+		
 
         $msg="NexGen Builder $formName \n\n $name $lastName $email $phone $message $service";
 
         echo($msg);
        
-        $to='designer@webduel.co.nz';
+        $to='info@nexgenbuilders.co.nz';
         $sub=$formName;
         mail($to,$sub,$msg, $headers);
 
