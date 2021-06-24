@@ -213,7 +213,7 @@ get_header();
                             ?>
                             <div class="card">
                                 
-                                <h4 class=" white center-align thin row-title"> <?php echo get_the_title();?></h4>
+                                <h4 class=" white center-align thin row-title typewriter-title"> <?php echo get_the_title();?></h4>
                             </div>
                             <?php
                         }
@@ -359,6 +359,29 @@ get_header();
                             ?>
         </div>        
     </div>
+</section>
+
+
+<!-- typewriter effect titles -->
+<section class="typewriter-query-container">
+            <?php 
+                    $argsTypewriter = array(
+                        'post_type' => 'slogans', 
+                        'posts_per_page' => -1,
+                      
+                    );
+                    $typewriterEffect = new WP_Query( $argsTypewriter );
+                       
+                        $titleArray = array_map('get_the_title', $typewriterEffect->posts);
+                        ?>
+                        <div data-title='<?php  echo json_encode($titleArray);?>'></div>
+
+                        <?php
+                    while($typewriterEffect->have_posts()){
+                        $typewriterEffect->the_post();
+                    }
+                    wp_reset_postdata();
+                ?>  
 </section>
 <?php 
 
